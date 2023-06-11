@@ -94,7 +94,7 @@ const Dropdown = ({ data }: DropdownProps) => {
         style={{ overflow: "hidden" }}
       >
         <Box px={8} mb="4" mt="-4">
-          {data.map((item) => (
+          {data && data.map((item) => (
             <Flex justify="space-between" alignItems="center" key={item.id}>
               <Flex direction="column" mt="2" gap="1">
                 <Text w="full" fontSize="xl" fontWeight="medium">
