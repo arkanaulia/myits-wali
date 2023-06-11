@@ -50,7 +50,7 @@ const ProfileTab = () => {
   const childrenData = [
     {
       name: "Arkan Aulia Farhan",
-      src: "avatar7.jpg",
+      src: "avatar.jpg",
     },
     {
       name: "John Doe",
