@@ -11,14 +11,14 @@ interface Props {
 
 const DataList = ({ data }: Props) => {
   return (
-    <Flex direction='column' gap='2'  w='full'>
-      {data.map((item, index) => (
-        <Box key={index} w='full'  mb={2}>
+    <Flex direction='column' gap='2' w='full'>
+      {data && data.map((item, index) => (
+        <Box key={index} w='full' mb={2}>
           <Text fontSize='xl' fontWeight="medium">{item.title}</Text>
           <Text fontSize='xl' fontWeight='normal'>{item.value}</Text>
         </Box>
       ))}
-    </Flex >
+    </Flex>
   );
 };
 
