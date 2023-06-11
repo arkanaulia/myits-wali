@@ -11,11 +11,11 @@ import {
 
  interface ChildModalProps {
    childrenData: {
-       name: string;
-         src: string;
-         nrp: string;
-         studyProgram: string;
-         semester: string;
+       name?: string;
+         src?: string;
+         nrp?: string;
+         studyProgram?: string;
+         semester?: string;
    }[];
    handleSelectChild: (index: number) => void;
    isModalOpen: boolean;
