@@ -39,14 +39,6 @@ function Sidebar (props: SidebarProps) {
   const { routes } = props
 
   const variantChange = '0.2s linear'
-  const shadow = useColorModeValue(
-    '14px 17px 40px 4px rgba(112, 144, 176, 0.08)',
-    'unset'
-  )
-  // Chakra Color Mode
-  const sidebarBg = useColorModeValue('white', 'navy.800')
-
-
   // SIDEBAR
   return (
     <Box display={{ sm: 'none', xl: 'block' }} position='fixed' minH='100%'>
