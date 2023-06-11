@@ -1,5 +1,5 @@
 // chakra imports
-import { Box, Flex, Stack } from "@chakra-ui/react";
+import { Box, Flex, Image, Stack } from "@chakra-ui/react";
 //   Custom components
 import Links from "components/sidebar/components/Links";
 import { IRoute } from "types/navigation";
@@ -50,11 +50,11 @@ const ProfileTab = () => {
   const childrenData = [
     {
       name: "Arkan Aulia Farhan",
-      src: "avatar.png",
+      src: "/img/avatars/avatar.png",
     },
     {
       name: "John Doe",
-      src: "avatar6.png",
+      src: "/img/avatars/avatar6.png",
     },
     // Add more children objects as needed
   ];
