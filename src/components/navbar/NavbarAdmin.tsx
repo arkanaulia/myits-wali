@@ -1,14 +1,6 @@
 
 // Chakra Imports
-import {
-  Box,
-  Flex,
-  Text,
-  useColorModeValue,
-  Icon
-} from '@chakra-ui/react'
-import { useState, useEffect } from 'react'
-import { isWindowAvailable } from 'utils/navigation'
+import { Box, Flex, Text, Icon } from '@chakra-ui/react';
 import { Image } from '@chakra-ui/react'
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
@@ -20,41 +12,18 @@ export default function AdminNavbar (props: {
   fixed: boolean
   onOpen: (...args: any[]) => any
 }) {
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    if (isWindowAvailable()) {
-      // You now have access to `window`
-      window.addEventListener('scroll', changeNavbar)
-
-      return () => {
-        window.removeEventListener('scroll', changeNavbar)
-      }
-    }
-  })
-
+  
+  
   // Here are all the props that may change depending on navbar's type or state.(secondary, variant, scrolled)
-  const mainText = useColorModeValue('navy.700', 'white')
-  const secondaryText = useColorModeValue('gray.700', 'white')
   const navbarPosition = 'fixed' as const
   const navbarFilter = 'none'
   const navbarBackdrop = 'blur(20px)'
   const navbarShadow = 'none'
-  const navbarBg = useColorModeValue(
-    'rgba(244, 247, 254, 0.2)',
-    'rgba(11,20,55,0.5)'
-  )
   const navbarBorder = 'transparent'
   const secondaryMargin = '0px'
   const paddingX = '15px'
   const gap = '0px'
-  const changeNavbar = () => {
-    if (isWindowAvailable() && window.scrollY > 1) {
-      setScrolled(true)
-    } else {
-      setScrolled(false)
-    }
-  }
+
 
   return (
     <Box
