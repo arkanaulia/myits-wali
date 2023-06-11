@@ -1,5 +1,5 @@
 // chakra imports
-import { Box, Flex, Image, Stack } from "@chakra-ui/react";
+import { Box, Flex, Stack } from "@chakra-ui/react";
 //   Custom components
 import Links from "components/sidebar/components/Links";
 import { IRoute } from "types/navigation";
