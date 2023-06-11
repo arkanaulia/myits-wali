@@ -21,7 +21,7 @@ const ProfileTab = () => {
           </Text>
         </VStack>
       </Flex>
-      <Flex alignItems="center" flexDirection="row" gap="32px" px='6' py='4' boxShadow='sm' border='1px' borderColor='biru.100' rounded='2xl' bg='white'>
+      <Flex alignItems="center" flexDirection="row" gap="32px" px="6" py="4" boxShadow="sm" border="1px" borderColor="biru.100" rounded="2xl" bg="white">
         <Box alignItems="center" flexDirection="column">
           <Text fontSize="xl" color="gray.500" fontWeight="normal">
             Nilai Skem
@@ -96,14 +96,8 @@ export default function Ekskul(props: { [x: string]: any }) {
           <Flex direction="column" gap="24px">
             <Flex alignItems="center" gap="6" w="full">
               <Box>
-                <Image
-                  src="/img/icons/ekskul.png"
-                  h="40px"
-                  w="40px"
-                  alt="info"
-                />
+                <Image src="/img/icons/ekskul.png" h="40px" w="40px" alt="info" />
               </Box>
-
               <Text fontSize="3xl" fontWeight="semibold">
                 Ekstrakurikuler
               </Text>
@@ -192,68 +186,57 @@ export default function Ekskul(props: { [x: string]: any }) {
                 </Heading>
               </Box>
 
-              <VStack spacing={3  } align="left" w="full">
+              <VStack spacing={3} align="left" w="full">
 
-              <Link href="/dashboard/studi">
-                <Flex
-                  alignItems="center"
-                  gap="6"
-                  w="full"
-                  p="2"
-                  rounded="lg"
-                  transition="all 0.2s ease-in-out"
-                  _hover={{ bg: "biru.100" }}
-                  cursor="pointer"
-                >
-                  <Box>
-                    <Image
-                      src="/img/icons/studi.png"
-                      h="40px"
-                      w="40px"
-                      alt="info"
-                    />
-                  </Box>
-                  <Box>
-                    <Text fontSize="2xl" fontWeight="medium">
-                      Kemajuan Studi
-                    </Text>
-                    <Text fontSize="lg" fontWeight="normal">
-                      Klik disini untuk mengakses halaman Kemajuan Studi!
-                    </Text>
-                  </Box>
-                </Flex>
+                <Link href="/dashboard/studi">
+                  <Flex
+                    alignItems="center"
+                    gap="6"
+                    w="full"
+                    p="2"
+                    rounded="lg"
+                    transition="all 0.2s ease-in-out"
+                    _hover={{ bg: "biru.100" }}
+                    cursor="pointer"
+                  >
+                    <Box>
+                      <Image src="/img/icons/studi.png" h="40px" w="40px" alt="info" />
+                    </Box>
+                    <Box>
+                      <Text fontSize="2xl" fontWeight="medium">
+                        Kemajuan Studi
+                      </Text>
+                      <Text fontSize="lg" fontWeight="normal">
+                        Klik disini untuk mengakses halaman Kemajuan Studi!
+                      </Text>
+                    </Box>
+                  </Flex>
                 </Link>
 
                 <Link href="/dashboard/presensi">
-                <Flex
-                  alignItems="center"
-                  gap="6"
-                  w="full"
-                  p="2"
-                  rounded="lg"
-                  transition="all 0.2s ease-in-out"
-                  _hover={{ bg: "biru.100" }}
-                  cursor="pointer"
-                >
-                  <Box>
-                    <Image
-                      src="/img/icons/absen.png"
-                      h="40px"
-                      w="40px"
-                      alt="info"
-                    />
-                  </Box>
-                  <Box>
-                    <Text fontSize="2xl" fontWeight="medium">
-                      Presensi
-                    </Text>
-                    <Text fontSize="lg" fontWeight="normal">
-                      Klik disini untuk mengakses halaman Presensi!
-                    </Text>
-                  </Box>
-                </Flex>
+                  <Flex
+                    alignItems="center"
+                    gap="6"
+                    w="full"
+                    p="2"
+                    rounded="lg"
+                    transition="all 0.2s ease-in-out"
+                    _hover={{ bg: "biru.100" }}
+                    cursor="pointer"
+                  >
+                    <Box>
+                      <Image src="/img/icons/absen.png" h="40px" w="40px" alt="info" />
+                    </Box>
+                    <Box>
+                      <Text fontSize="2xl" fontWeight="medium">
+                        Presensi
+                      </Text>
+                      <Text fontSize="lg" fontWeight="normal">
+                        Klik disini untuk mengakses halaman Presensi!
+                      </Text>
+                    </Box>
+                  </Flex>
                 </Link>
-
 
                 <Link href="/dashboard/biaya">
                   <Flex
@@ -267,12 +250,7 @@ export default function Ekskul(props: { [x: string]: any }) {
                     cursor="pointer"
                   >
                     <Box>
-                      <Image
-                        src="/img/icons/biaya.png"
-                        h="40px"
-                        w="40px"
-                        alt="info"
-                      />
+                      <Image src="/img/icons/biaya.png" h="40px" w="40px" alt="info" />
                     </Box>
                     <Box>
                       <Text fontSize="2xl" fontWeight="medium">

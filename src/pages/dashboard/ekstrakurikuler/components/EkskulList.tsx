@@ -1,10 +1,4 @@
-
-import {
-  Box,
-  Text,
-  Flex,
-  Image,
-} from "@chakra-ui/react";
+import { Box, Text, Flex, Image } from "@chakra-ui/react";
 
 type Data = {
   id?: number;
@@ -16,26 +10,20 @@ type Data = {
   icon?: string;
 };
 
-type DropdownProps = {
+type EkskulListProps = {
   data: Data[];
 };
 
-const EkskulList = ({ data }: DropdownProps) => {
+const EkskulList = ({ data }: EkskulListProps) => {
   return (
     <Box w="full">
       {data.map((item) => (
-        <Flex w="full" direction='column' key={item.id}>
-         
+        <Flex w="full" direction="column" key={item.id}>
           {item.nama && (
-            <Flex justifyContent="space-between" mt='4' alignItems="center" w="full">
+            <Flex justifyContent="space-between" mt="4" alignItems="center" w="full">
               <Flex alignItems="center" gap="4">
                 <Box>
-                  <Image
-                    src={`/img/icons/${item.icon}.png`}
-                    h="40px"
-                    w="40px"
-                    alt="medali"
-                  />
+                  <Image src={`/img/icons/${item.icon}.png`} h="40px" w="40px" alt="medali" />
                 </Box>
                 <Box>
                   <Text fontSize="xl" fontWeight="medium">
