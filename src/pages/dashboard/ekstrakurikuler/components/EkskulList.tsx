@@ -10,10 +10,14 @@ type Data = {
 };
 
 type EkskulListProps = {
-  data: Data[];
+  data?: Data[];
 };
 
 const EkskulList = ({ data }: EkskulListProps) => {
+  if (!data || data.length === 0) {
+    return <Text>No data available</Text>;
+  }
+
   return (
     <Box w="full">
       {data.map((item) => (
