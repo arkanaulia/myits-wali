@@ -9,10 +9,7 @@ import {
   Link,
   useColorModeValue
 } from '@chakra-ui/react'
-import { useState, useEffect } from 'react'
 import AdminNavbarLinks from 'components/navbar/NavbarLinksAdmin'
-import { isWindowAvailable } from 'utils/navigation'
-
 export default function AdminNavbar (props: {
   secondary: boolean
   message: string | boolean
@@ -21,19 +18,7 @@ export default function AdminNavbar (props: {
   fixed: boolean
   onOpen: (...args: any[]) => any
 }) {
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    if (isWindowAvailable()) {
-      window.addEventListener('scroll', changeNavbar)
-
-      return () => {
-        window.removeEventListener('scroll', changeNavbar)
-      }
-    }
-  })
-
-  const { secondary, message, brandText, fixed } = props
+  const { secondary,  brandText, fixed } = props
 
   // Here are all the props that may change depending on navbar's type or state.(secondary, variant, scrolled)
   const mainText = useColorModeValue('navy.700', 'white')
@@ -50,13 +35,7 @@ export default function AdminNavbar (props: {
   const secondaryMargin = '0px'
   const paddingX = '15px'
   const gap = '0px'
-  const changeNavbar = () => {
-    if (isWindowAvailable() && window.scrollY > 1) {
-      setScrolled(true)
-    } else {
-      setScrolled(false)
-    }
-  }
+ 
 
   return (
     <Box
