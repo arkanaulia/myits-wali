@@ -1,13 +1,13 @@
 import { Flex } from '@chakra-ui/react';
 import React from 'react';
 
-const HSeparator = (props: { variant?: string; [x: string]: any }) => {
-	const { variant, ...rest } = props;
+const HSeparator = (props: { [x: string]: any }) => {
+	const {  ...rest } = props;
 	return <Flex h='1px' w='100%' bg='rgba(135, 140, 189, 0.3)' {...rest} />;
 };
 
-const VSeparator = (props: { variant?: string; [x: string]: any }) => {
-	const { variant, ...rest } = props;
+const VSeparator = (props: { [x: string]: any }) => {
+	const {  ...rest } = props;
 	return <Flex w='1px' bg='rgba(135, 140, 189, 0.3)' {...rest} />;
 };
 

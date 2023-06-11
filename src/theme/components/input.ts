@@ -1,4 +1,4 @@
-import { mode, StyleFunctionProps } from "@chakra-ui/theme-tools";
+import { mode } from "@chakra-ui/theme-tools";
 export const inputStyles = {
   components: {
     Input: {
@@ -10,28 +10,28 @@ export const inputStyles = {
       },
 
       variants: {
-        main: (props: StyleFunctionProps) => ({
+        main: () => ({
           field: {
-            bg: mode("transparent", "navy.800")(props),
+            bg: mode("transparent", "navy.800"),
             border: "1px solid",
-            color: mode("secondaryGray.900", "white")(props),
-            borderColor: mode("secondaryGray.100", "whiteAlpha.100")(props),
+            color: mode("secondaryGray.900", "white"),
+            borderColor: mode("secondaryGray.100", "whiteAlpha.100"),
             borderRadius: "16px",
             fontSize: "sm",
             p: "20px",
             _placeholder: { color: "secondaryGray.400" },
           },
         }),
-        auth: (props: StyleFunctionProps) => ({
+        auth: () => ({
           field: {
             fontWeight: "500",
-            color: mode("navy.700", "white")(props),
-            bg: mode("transparent", "transparent")(props),
+            color: mode("navy.700", "white"),
+            bg: mode("transparent", "transparent"),
             border: "1px solid",
             borderColor: mode(
               "secondaryGray.100",
               "rgba(135, 140, 189, 0.3)"
-            )(props),
+            ),
             borderRadius: "16px",
             _placeholder: { color: "secondaryGray.600", fontWeight: "400" },
           },
@@ -111,12 +111,12 @@ export const inputStyles = {
       },
 
       variants: {
-        main: (props: StyleFunctionProps) => ({
+        main: () => ({
           field: {
-            bg: mode("transparent", "navy.800")(props),
+            bg: mode("transparent", "navy.800"),
             border: "1px solid",
             color: "secondaryGray.600",
-            borderColor: mode("secondaryGray.100", "whiteAlpha.100")(props),
+            borderColor: mode("secondaryGray.100", "whiteAlpha.100"),
             borderRadius: "16px",
             _placeholder: { color: "secondaryGray.600" },
           },
@@ -124,9 +124,9 @@ export const inputStyles = {
             color: "secondaryGray.600",
           },
         }),
-        mini: (props: StyleFunctionProps) => ({
+        mini: () => ({
           field: {
-            bg: mode("transparent", "navy.800")(props),
+            bg: mode("transparent", "navy.800"),
             border: "0px solid transparent",
             fontSize: "0px",
             p: "10px",
@@ -152,12 +152,12 @@ export const inputStyles = {
             color: "secondaryGray.600",
           },
         }),
-        transparent: (props: StyleFunctionProps) => ({
+        transparent: () => ({
           field: {
             bg: "transparent",
             border: "0px solid",
             width: "min-content",
-            color: mode("secondaryGray.600", "secondaryGray.600")(props),
+            color: mode("secondaryGray.600", "secondaryGray.600"),
             borderColor: "transparent",
             padding: "0px",
             paddingLeft: "8px",
@@ -184,7 +184,7 @@ export const inputStyles = {
             _placeholder: { color: "secondaryGray.600" },
           },
         }),
-        authSecondary: (props: StyleFunctionProps) => ({
+        authSecondary: () => ({
           field: {
             bg: "transparent",
             border: "1px solid",
@@ -194,7 +194,7 @@ export const inputStyles = {
             _placeholder: { color: "secondaryGray.600" },
           },
         }),
-        search: (props: StyleFunctionProps) => ({
+        search: () => ({
           field: {
             border: "none",
             py: "11px",

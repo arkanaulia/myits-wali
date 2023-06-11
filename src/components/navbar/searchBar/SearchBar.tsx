@@ -7,18 +7,14 @@ import {
 } from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
 export function SearchBar (props: {
-  variant?: string
   background?: string
-  children?: JSX.Element
   placeholder?: string
   borderRadius?: string | number
   [x: string]: any
 }) {
   // Pass the computed styles into the `__css` prop
   const {
-    variant,
     background,
-    children,
     placeholder,
     borderRadius,
     ...rest
@@ -47,7 +43,6 @@ export function SearchBar (props: {
       </InputLeftElement>
 
       <Input
-        variant='search'
         fontSize='sm'
         bg={background ? background : inputBg}
         color={inputText}
