@@ -29,23 +29,6 @@ interface SidebarContentProps {
   routes: IRoute[];
 }
 
-const childrenData = [
-  {
-    name: "Arkan Aulia Farhan",
-    src: "/img/avatars/avatar.png",
-    nrp: "05111940000128",
-    studyProgram: "Teknik Informatika 2019",
-    semester: "5",
-  },
-  {
-    name: "John Doe",
-    src: "/img/avatars/avatar6.png",
-    nrp: "05111940000002",
-    studyProgram: "Teknik Informatika 2018",
-    semester: "7",
-  },
-  // Tambahkan data anak lain jika diperlukan
-];
 
 const ProfileTab = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -63,6 +46,18 @@ const ProfileTab = () => {
     setSelectedChild(index);
     closeModal();
   };
+
+  const childrenData = [
+    {
+      name: "Child 1",
+      src: "avatar1.jpg",
+    },
+    {
+      name: "Child 2",
+      src: "avatar2.jpg",
+    },
+    // Add more children objects as needed
+  ];
 
   return (
     <>
@@ -84,14 +79,14 @@ const ProfileTab = () => {
             <Avatar
               size="md"
               name="avatar"
-              src={childrenData[selectedChild].src}
+              src={childrenData[selectedChild]?.src}
             />
             <VStack ml="4" align="flex-start" spacing="0">
               <Text fontSize="md" color="gray.500">
                 Mahasiswa
               </Text>
               <Text fontSize="xl" fontWeight="medium" noOfLines={1}>
-                {childrenData[selectedChild].name}
+                {childrenData[selectedChild]?.name}
               </Text>
             </VStack>
             <Box ml="4">
@@ -100,7 +95,7 @@ const ProfileTab = () => {
           </Flex>
         </MenuButton>
         <MenuList w="280px" p="2">
-          <Link href='/dashboard/profil'>
+          <Link href="/dashboard/profil">
             <MenuItem
               fontSize="lg"
               icon={<Icon as={HiUser} boxSize="6" alignItems="center" />}
@@ -134,6 +129,7 @@ const ProfileTab = () => {
     </>
   );
 };
+
 
 function SidebarContent(props: SidebarContentProps) {
   const { routes } = props;
