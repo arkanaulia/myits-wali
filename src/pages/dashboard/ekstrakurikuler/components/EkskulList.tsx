@@ -1,8 +1,7 @@
-import { Box, Text, Flex, Image } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
 type Data = {
   id?: number;
-  judul?: string;
   nama?: string;
   desc?: string;
   jenis?: string;

@@ -21,7 +21,18 @@ const ProfileTab = () => {
           </Text>
         </VStack>
       </Flex>
-      <Flex alignItems="center" flexDirection="row" gap="32px" px="6" py="4" boxShadow="sm" border="1px" borderColor="biru.100" rounded="2xl" bg="white">
+      <Flex
+        alignItems="center"
+        flexDirection="row"
+        gap="32px"
+        px="6"
+        py="4"
+        boxShadow="sm"
+        border="1px"
+        borderColor="biru.100"
+        rounded="2xl"
+        bg="white"
+      >
         <Box alignItems="center" flexDirection="column">
           <Text fontSize="xl" color="gray.500" fontWeight="normal">
             Nilai Skem
@@ -56,38 +67,36 @@ const ProfileTab = () => {
   );
 };
 
-const data1 = [
-  {
-    id: 1,
-    nama: "Basic Media Schooling FTEIC 2023",
-    desc: "Bem FTEIC",
-    jenis: "Pelatihan",
-    waktu: "01 Feb 2021 - 31 Mar 2021",
-    icon: "kegiatan",
-  },
-];
-const data2 = [
-  {
-    id: 1,
-    nama: "PKM 2023",
-    desc: "Juara 1",
-    jenis: "Kompetisi",
-    waktu: "01 Feb 2021 - 31 Mar 2021",
-    icon: "medali",
-  },
-  {
-    id: 2,
-    nama: "PKM 2022",
-    desc: "Juara 1",
-    jenis: "Kompetisi",
-    waktu: "01 Feb 2021 - 31 Mar 2021",
-    icon: "medali",
-  },
-];
-
-export default function Ekskul(props: { [x: string]: any }) {
-  // Chakra Color Mode
+const Ekskul = (props: { [x: string]: any }) => {
   const { ...rest } = props;
+  const data1 = [
+    {
+      id: 1,
+      nama: "Basic Media Schooling FTEIC 2023",
+      desc: "Bem FTEIC",
+      jenis: "Pelatihan",
+      waktu: "01 Feb 2021 - 31 Mar 2021",
+      icon: "kegiatan",
+    },
+  ];
+  const data2 = [
+    {
+      id: 1,
+      nama: "PKM 2023",
+      desc: "Juara 1",
+      jenis: "Kompetisi",
+      waktu: "01 Feb 2021 - 31 Mar 2021",
+      icon: "medali",
+    },
+    {
+      id: 2,
+      nama: "PKM 2022",
+      desc: "Juara 1",
+      jenis: "Kompetisi",
+      waktu: "01 Feb 2021 - 31 Mar 2021",
+      icon: "medali",
+    },
+  ];
 
   return (
     <AdminLayout>
@@ -96,7 +105,12 @@ export default function Ekskul(props: { [x: string]: any }) {
           <Flex direction="column" gap="24px">
             <Flex alignItems="center" gap="6" w="full">
               <Box>
-                <Image src="/img/icons/ekskul.png" h="40px" w="40px" alt="info" />
+                <Image
+                  src="/img/icons/ekskul.png"
+                  h="40px"
+                  w="40px"
+                  alt="info"
+                />
               </Box>
               <Text fontSize="3xl" fontWeight="semibold">
                 Ekstrakurikuler
@@ -269,4 +283,6 @@ export default function Ekskul(props: { [x: string]: any }) {
       </Box>
     </AdminLayout>
   );
-}
+};
+
+export default Ekskul;

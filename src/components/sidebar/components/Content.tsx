@@ -49,12 +49,12 @@ const ProfileTab = () => {
 
   const childrenData = [
     {
-      name: "Child 1",
-      src: "avatar1.jpg",
+      name: "Arkan Aulia Farhan",
+      src: "avatar7.jpg",
     },
     {
-      name: "Child 2",
-      src: "avatar2.jpg",
+      name: "John Doe",
+      src: "avatar6.jpg",
     },
     // Add more children objects as needed
   ];
