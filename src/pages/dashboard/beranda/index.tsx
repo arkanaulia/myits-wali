@@ -48,7 +48,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
                   fontSize={{ base: "md", md: "lg" }}
                   rightIcon={<MdArrowForwardIos />}
                   colorScheme="blue"
-                  fontWeight="500"
+                  fontWeight="600"
                   variant="its"
                   w="full"
                   size="lg"
@@ -87,7 +87,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
                   fontSize={{ base: "md", md: "lg" }}
                   rightIcon={<MdArrowForwardIos />}
                   colorScheme="blue"
-                  fontWeight="500"
+                  fontWeight="600"
                   variant="its"
                   w="full"
                   size="lg"
@@ -126,7 +126,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
                   fontSize={{ base: "md", md: "lg" }}
                   rightIcon={<MdArrowForwardIos />}
                   colorScheme="blue"
-                  fontWeight="500"
+                  fontWeight="600"
                   variant="its"
                   w="full"
                   size="lg"
@@ -192,7 +192,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
                   fontSize={{ base: "md", md: "lg" }}
                   rightIcon={<MdArrowForwardIos />}
                   colorScheme="blue"
-                  fontWeight="500"
+                  fontWeight="600"
                   variant="its"
                   w="full"
                   size="lg"
