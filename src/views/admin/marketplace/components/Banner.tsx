@@ -13,11 +13,11 @@ export default function Banner () {
       direction='column'
       // bgImage={banner}
       bgSize='cover'
-      bgPosition='center'
+      bgPosition='left'
       py={{ base: '30px', md: '56px' }}
       px={{ base: '30px', md: '64px' }}
       borderRadius='2xl'
-      h='340px'
+      h={{ base:'120px',md:'340px' }}
       boxShadow="lg"
     >
     </Flex>

@@ -51,10 +51,12 @@ const ProfileTab = () => {
     {
       name: "Arkan Aulia Farhan",
       src: "/img/avatars/avatar.png",
+      role: "Mahasiswa"
     },
     {
       name: "John Doe",
       src: "/img/avatars/avatar6.png",
+      role: "Mahasiswa"
     },
     // Add more children objects as needed
   ];
@@ -66,7 +68,7 @@ const ProfileTab = () => {
           px="4"
           py="4"
           mx="2"
-          w="280px"
+          w={{ base:'265px',md:"280px" }}
           rounded="xl"
           as={Flex}
           align="center"
@@ -82,10 +84,10 @@ const ProfileTab = () => {
               src={childrenData[selectedChild]?.src}
             />
             <VStack ml="4" align="flex-start" spacing="0">
-              <Text fontSize="md" color="gray.500">
-                Mahasiswa
+              <Text fontSize={{ base:'sm',md:"md" }} color="gray.500">
+              {childrenData[selectedChild]?.role}
               </Text>
-              <Text fontSize="xl" fontWeight="medium" noOfLines={1}>
+              <Text fontSize={{ base:'md',md:"xl" }} fontWeight="medium" noOfLines={1}>
                 {childrenData[selectedChild]?.name}
               </Text>
             </VStack>
@@ -94,17 +96,17 @@ const ProfileTab = () => {
             </Box>
           </Flex>
         </MenuButton>
-        <MenuList w="280px" p="2">
+        <MenuList w={{ base:'265px',md:"280px" }} p="2">
           <Link href="/dashboard/profil">
             <MenuItem
-              fontSize="lg"
+              fontSize={{ base:'md',md:"lg" }}
               icon={<Icon as={HiUser} boxSize="6" alignItems="center" />}
             >
               Profil Anak Wali
             </MenuItem>
           </Link>
           <MenuItem
-            fontSize="lg"
+            fontSize={{ base:'md',md:"lg" }}
             icon={
               <Icon as={HiSwitchVertical} boxSize="6" alignItems="center" />
             }
@@ -113,7 +115,7 @@ const ProfileTab = () => {
             Ganti Anak Wali
           </MenuItem>
           <MenuItem
-            fontSize="lg"
+            fontSize={{ base:'md',md:"lg" }}
             icon={<Icon as={IoLogOut} boxSize="6" alignItems="center" />}
           >
             Keluar
@@ -135,7 +137,7 @@ function SidebarContent(props: SidebarContentProps) {
   const { routes } = props;
   // SIDEBAR
   return (
-    <Flex direction="column" height="100%" pt="15px" borderRadius="30px">
+    <Flex direction="column" height="100%" pt={{ base:'30px',md:"15px" }} borderRadius="30px">
       <ProfileTab />
 
       <Stack direction="column" mt="8px" mb="auto" ps="20px">

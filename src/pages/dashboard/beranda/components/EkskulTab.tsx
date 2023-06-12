@@ -31,43 +31,69 @@ import {
    ];
  
    return (
-     <Flex alignItems="center" w="full" flexDirection="column" gap="24px">
+     <Flex alignItems="center" w="full" flexDirection="column" gap={{ base:'16px',md:"24px" }}>
        {/* Academic Data */}
-       <Flex alignItems="center" w="full" flexDirection="row" gap="32px">
-         <Box alignItems="center" flexDirection="column">
-           <Text fontSize="xl" color="gray.500" fontWeight="normal">
-             Nilai Skem
-           </Text>
-           <Text fontSize="3xl" fontWeight="medium">
-             {ipkSkem}
-           </Text>
-         </Box>
-         <Box alignItems="center" flexDirection="column">
-           <Text fontSize="xl" color="gray.500" fontWeight="normal">
-             SKS Tempuh
-           </Text>
-           <Flex alignItems="end" gap="1">
-             <Text fontSize="3xl" fontWeight="medium">
-               {kreditSkem}
-             </Text>
-             <Text fontSize="xl" color="gray.500" fontWeight="medium">
-               /{totalSkem}
-             </Text>
-           </Flex>
-         </Box>
-         <Box alignItems="center" flexDirection="column">
-           <Text fontSize="xl" color="gray.500" fontWeight="normal">
-             Status Mahasiswa
-           </Text>
-           <Text fontSize="3xl" color="green.500" fontWeight="medium">
-             {statusLulus}
-           </Text>
-         </Box>
-       </Flex>
- 
+       <Flex
+      alignItems={{ base: "left", md: "center" }}
+      w="full"
+      flexDirection="row"
+      gap={{ base:'20px',md:"24px" }}
+    >
+      <Box alignItems="center" w='max-content' flexDirection="column">
+        <Text
+          fontSize={{ base: "md", md: "xl" }}
+          color="gray.500"
+          fontWeight="normal"
+        >
+          Nilai SKEM
+        </Text>
+        <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="medium">
+          {ipkSkem}
+        </Text>
+      </Box>
+      <Box alignItems="center" w='max-content' flexDirection="column">
+        <Text
+          fontSize={{ base: "md", md: "xl" }}
+          color="gray.500"
+          fontWeight="normal"
+        >
+          SKS SKEM
+        </Text>
+        <Flex alignItems="end" gap="1">
+          <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="medium">
+            {kreditSkem}
+          </Text>
+          <Text
+            fontSize={{ base: "md", md: "xl" }}
+            color="gray.500"
+            fontWeight="medium"
+            mb='1'
+          >
+            /{totalSkem}
+          </Text>
+        </Flex>
+      </Box>
+      <Box alignItems="center" w='max-content' flexDirection="column">
+        <Text
+          fontSize={{ base: "md", md: "xl" }}
+          color="gray.500"
+          fontWeight="normal"
+          noOfLines={1}
+        >
+          Status SKEM
+        </Text>
+        <Text
+          fontSize={{ sm: "2xl", md: "3xl" }}
+          color="green.500"
+          fontWeight="medium"
+        >
+          {statusLulus}
+        </Text>
+      </Box>
+    </Flex>
        {/* Kegiatan Data */}
        <Flex w="full" flexDirection="column" gap="2">
-         <Text fontSize="xl" fontWeight="normal" color="gray.500">
+         <Text fontSize={{ base:'lg',md:"xl" }} fontWeight="normal" color="gray.500">
            Kegiatan
          </Text>
  
@@ -89,15 +115,15 @@ import {
                  />
                </Box>
                <Box>
-                 <Text fontSize="2xl" fontWeight="medium">
+                 <Text noOfLines={1} fontSize={{ base:'lg',md:"2xl" }} fontWeight="medium">
                    {kegiatan.title}
                  </Text>
-                 <Text fontSize="xl" fontWeight="normal">
+                 <Text fontSize={{ base:'lg',md:"xl" }} fontWeight="normal">
                    {kegiatan.position}
                  </Text>
                </Box>
              </Flex>
-             <Flex direction="column" alignItems="end">
+             <Flex display={{ base:'none', md:'block' }} direction="column" alignItems="end">
                <Text fontSize="xl" fontWeight="medium" mb="1">
                 {kegiatan.jenis}
                </Text>
@@ -108,7 +134,7 @@ import {
            </Flex>
          ))}
  
-         <Text fontSize="lg" fontWeight="normal" color="gray.500">
+         <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal" color="gray.500">
            + {kegiatanData.length} Kegiatan
          </Text>
        </Flex>

@@ -8,7 +8,6 @@ import {
   Drawer,
   DrawerBody,
   Icon,
-  useColorModeValue,
   DrawerOverlay,
   useDisclosure,
   DrawerContent,
@@ -67,8 +66,6 @@ function Sidebar (props: SidebarProps) {
 // FUNCTIONS
 
 export function SidebarResponsive (props: SidebarResponsiveProps) {
-  const sidebarBackgroundColor = useColorModeValue('white', 'navy.800')
-  const menuColor = useColorModeValue('gray.400', 'white')
   // // SIDEBAR
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef()
@@ -82,10 +79,10 @@ export function SidebarResponsive (props: SidebarResponsiveProps) {
       <Flex ref={btnRef} w='max-content' h='max-content' onClick={onOpen}>
         <Icon
           as={IoMenuOutline}
-          color={menuColor}
+          color='gray.800'
           my='auto'
-          w='20px'
-          h='20px'
+          w='30px'
+          h='30px'
           me='10px'
           _hover={{ cursor: 'pointer' }}
         />
@@ -101,7 +98,7 @@ export function SidebarResponsive (props: SidebarResponsiveProps) {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent w='285px' maxW='285px' bg={sidebarBackgroundColor}>
+        <DrawerContent w='285px' maxW='285px' bg='secondaryGray.300'>
           <DrawerCloseButton
             zIndex='3'
             onClick={onClose}

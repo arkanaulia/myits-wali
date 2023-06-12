@@ -63,7 +63,7 @@ const LineGraph = ({ data, labels }: GraphProps) => {
 
 
   return (
-    <Box  mx="auto" h='24vh' my={8}>
+    <Box  mx="auto" h='24vh' my={{ base:'2',md:'8' }}>
       <Line data={graphData} options={options} />
     </Box>
   );

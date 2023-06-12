@@ -1,4 +1,4 @@
-import { Avatar, Box, Flex, Text, VStack, Heading } from "@chakra-ui/react";
+import { Avatar, Box, Flex, Text, VStack, Heading, useBreakpointValue } from "@chakra-ui/react";
 
 import AdminLayout from "layouts/admin";
 import { Image } from "components/image/Image";
@@ -8,58 +8,62 @@ import LineGraph from "./components/Graph";
 import Link from "next/link";
 
 const ProfileTab = () => {
+  const avatarSize = useBreakpointValue({ base: "md", md: "lg" });
   return (
-    <Flex alignItems="center" w="full" justifyContent="space-between">
+    <Flex alignItems="center" w="full" direction={{ base:'column', md:'row' }} gap='16px' justifyContent={{ base:'',md:"space-between" }}>
       <Flex alignItems="center">
-        <Avatar size="lg" name="avatar" src="/img/avatars/avatar.png" />
+        <Avatar size={avatarSize} name="avatar" src="/img/avatars/avatar.png" />
         <VStack ml="8" align="flex-start" spacing="0">
-          <Text fontSize="2xl" fontWeight="medium">
+          <Text fontSize={{ base:'lg',md:"2xl" }}  fontWeight="medium">
             Arkan Aulia Farhan
           </Text>
-          <Text fontSize="xl">05111940000128</Text>
-          <Text fontSize="xl" color="gray.500">
+          <Text fontSize={{ base:'lg',md:"xl" }} >05111940000128</Text>
+          <Text fontSize={{ base:'lg',md:"xl" }}  color="gray.500">
             Teknik Informatika 2019
           </Text>
         </VStack>
       </Flex>
+      
+
+      
       <Flex
-        alignItems="center"
+        alignItems="start"
         flexDirection="row"
-        gap="32px"
-        px="6"
-        py="4"
-        boxShadow="sm"
-        border="1px"
-        borderColor="biru.100"
+        gap={{ base:'24px',md:"32px" }}
+        px={{ base:'0',md:"6" }}
+        py={{ base:'0',md:"4" }}
+        boxShadow={{ base:'', md:"sm" }}
+        border={{ base:'', md:"1px" }}
+        borderColor={{ base:'biru.100',md:"biru.100" }}
         rounded="2xl"
-        bg="white"
+        bg={{ base:'',md:"white" }}
       >
         <Box alignItems="center" flexDirection="column">
-          <Text fontSize="xl" color="gray.500" fontWeight="normal">
+          <Text fontSize={{ base:'md',md:"xl" }} color="gray.500" fontWeight="normal">
             IPK
           </Text>
-          <Text fontSize="3xl" fontWeight="medium">
+          <Text fontSize={{ base:'xl',md:"3xl" }} fontWeight="medium">
             3.85
           </Text>
         </Box>
         <Box alignItems="center" flexDirection="column">
-          <Text fontSize="xl" color="gray.500" fontWeight="normal">
+          <Text fontSize={{ base:'md',md:"xl" }} color="gray.500" fontWeight="normal">
             SKS Lulus
           </Text>
           <Flex alignItems="end" gap="1">
-            <Text fontSize="3xl" fontWeight="medium">
+            <Text fontSize={{ base:'xl',md:"3xl" }} fontWeight="medium">
               120
             </Text>
-            <Text fontSize="xl" color="gray.500" fontWeight="medium">
+            <Text mb='1' fontSize={{ base:'md',md:"xl" }} color="gray.500" fontWeight="medium">
               /144
             </Text>
           </Flex>
         </Box>
         <Box alignItems="center" flexDirection="column">
-          <Text fontSize="xl" color="gray.500" fontWeight="normal">
+          <Text fontSize={{ base:'md',md:"xl" }} color="gray.500" noOfLines={1} fontWeight="normal">
             Status Mahasiswa
           </Text>
-          <Text fontSize="3xl" color="green.500" fontWeight="medium">
+          <Text fontSize={{ base:'xl',md:"3xl" }} color="green.500" fontWeight="medium">
             Aktif
           </Text>
         </Box>
@@ -195,31 +199,31 @@ export default function studi(props: { [x: string]: any }) {
 
   return (
     <AdminLayout>
-      <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
+      <Box pt={{ base: "40px", md: "80px", xl: "80px" }}>
         <>
-          <Flex direction="column" gap="24px">
-            <Flex alignItems="center" gap="6" w="full">
+          <Flex direction="column" gap={{ base:'20px',md:"24px" }}>
+            <Flex alignItems="center" gap={{ base:'4',md:"6" }} w="full">
               <Box>
                 <Image
                   src="/img/icons/studi.png"
-                  h="40px"
-                  w="40px"
+                  h={{ base:'30px',md:"40px" }}
+                  w={{ base:'30px',md:"40px" }}
                   alt="info"
                 />
               </Box>
 
-              <Text fontSize="3xl" fontWeight="semibold">
+              <Text fontSize={{ base:'2xl',md:"3xl" }} fontWeight="semibold">
                 Kemajuan Studi
               </Text>
             </Flex>
             <Card
               boxShadow="lg"
-              p="32px"
+              p={{ base: "24px", md: "32px" }}
               alignItems="center"
               flexDirection="column"
-              gap="24px"
+              gap={{ base: "16px", md: "24px" }}
               backgroundImage="url('/img/dashboards/pattern.svg')"
-              backgroundRepeat="no-repeat"
+              backgroundRepeat="repeat-y"
               backgroundPosition="center"
               backgroundSize="auto"
               backgroundBlendMode="hard-light"
@@ -234,10 +238,10 @@ export default function studi(props: { [x: string]: any }) {
 
             <Card
               boxShadow="lg"
-              p="32px"
+              p={{ base: "24px", md: "32px" }}
               alignItems="center"
               flexDirection="column"
-              gap="24px"
+              gap={{ base: "16px", md: "24px" }}
               backgroundImage="url('/img/dashboards/pattern.svg')"
               backgroundRepeat="repeat-y"
               backgroundPosition="center"
@@ -247,11 +251,11 @@ export default function studi(props: { [x: string]: any }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading fontSize="3xl" fontWeight="semibold">
+                <Heading fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="semibold">
                   Detail Nilai
                 </Heading>
               </Box>
-              <Flex w="100%" direction="column" gap="4px">
+              <Flex w="100%" direction="column" gap={{ base:'10px',md:"4px" }}>
                 <Dropdown data={data1} />
                 {/* <Divider orientation="horizontal" w='full' borderColor='gray.400' /> */}
                 <Dropdown data={data2} />
@@ -263,10 +267,10 @@ export default function studi(props: { [x: string]: any }) {
 
             <Card
               boxShadow="lg"
-              p="32px"
+              p={{ base: "24px", md: "32px" }}
               alignItems="center"
               flexDirection="column"
-              gap="24px"
+              gap={{ base: "16px", md: "24px" }}
               backgroundImage="url('/img/dashboards/pattern.svg')"
               backgroundRepeat="repeat-y"
               backgroundPosition="center"
@@ -276,12 +280,12 @@ export default function studi(props: { [x: string]: any }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading fontSize="3xl" fontWeight="semibold">
+                <Heading fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="semibold">
                   Lihat Juga
                 </Heading>
               </Box>
 
-              <VStack spacing={3} align="left" w="full">
+              <VStack spacing={{ base:'1',md:'3' }} align="left" w="full">
                 <Link href="/dashboard/ekstrakurikuler">
                   <Flex
                     alignItems="center"
@@ -296,16 +300,16 @@ export default function studi(props: { [x: string]: any }) {
                     <Box>
                       <Image
                         src="/img/icons/ekskul.png"
-                        h="40px"
-                        w="40px"
+                        h={{ base:'30px',md:"40px" }}
+                        w={{ base:'30px',md:"40px" }}
                         alt="info"
                       />
                     </Box>
                     <Box>
-                      <Text fontSize="2xl" fontWeight="medium">
+                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="medium">
                         Ekstrakurikuler
                       </Text>
-                      <Text fontSize="lg" fontWeight="normal">
+                      <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">
                         Klik disini untuk mengakses halaman Ekstrakurikuler!
                       </Text>
                     </Box>
@@ -326,16 +330,16 @@ export default function studi(props: { [x: string]: any }) {
                     <Box>
                       <Image
                         src="/img/icons/biaya.png"
-                        h="40px"
-                        w="40px"
+                        h={{ base:'30px',md:"40px" }}
+                        w={{ base:'30px',md:"40px" }}
                         alt="info"
                       />
                     </Box>
                     <Box>
-                      <Text fontSize="2xl" fontWeight="medium">
+                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="medium">
                         Biaya Pendidikan
                       </Text>
-                      <Text fontSize="lg" fontWeight="normal">
+                      <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">
                         Klik disini untuk mengakses halaman Biaya Pendidikan!
                       </Text>
                     </Box>
@@ -356,16 +360,16 @@ export default function studi(props: { [x: string]: any }) {
                     <Box>
                       <Image
                         src="/img/icons/absen.png"
-                        h="40px"
-                        w="40px"
+                        h={{ base:'30px',md:"40px" }}
+                        w={{ base:'30px',md:"40px" }}
                         alt="info"
                       />
                     </Box>
                     <Box>
-                      <Text fontSize="2xl" fontWeight="medium">
+                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="medium">
                         Presensi
                       </Text>
-                      <Text fontSize="lg" fontWeight="normal">
+                      <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">
                         Klik disini untuk mengakses halaman Presensi!
                       </Text>
                     </Box>

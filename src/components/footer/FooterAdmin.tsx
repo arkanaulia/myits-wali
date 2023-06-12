@@ -22,10 +22,11 @@ export default function Footer() {
 					base: 'center',
 					xl: 'start'
 				}}
+				fontSize={{ base:'sm', md:'md' }} 
 				>
 				{' '}
 				&copy; {new Date().getFullYear()}
-				<Text as='span' fontWeight='500' ms='4px'>
+				<Text as='span' fontWeight='500' ms='4px' fontSize={{ base:'sm', md:'md' }} >
 				Hak Cipta Institut Teknologi Sepuluh Nopember
 				
 				</Text>

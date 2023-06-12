@@ -12,29 +12,29 @@ export default function Presensi(props: { [x: string]: any }) {
 
   return (
     <AdminLayout>
-      <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
+      <Box pt={{ base: "40px", md: "80px", xl: "80px" }}>
         <>
-          <Flex direction="column" gap="24px">
+          <Flex direction="column" gap={{ base:'20px',md:"24px" }}>
             <Flex alignItems="center" gap="6" w="full">
               <Box>
                 <Image
                   src="/img/icons/absen.png"
-                  h="40px"
-                  w="40px"
+                  h={{ base: "30px", md: "40px" }}
+                  w={{ base: "30px", md: "40px" }}
                   alt="info"
                 />
               </Box>
 
-              <Text fontSize="3xl" fontWeight="semibold">
+              <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="semibold">
                 Presensi
               </Text>
             </Flex>
             <Card
               boxShadow="lg"
-              p="32px"
+              p={{ base: "24px", md: "32px" }}
               alignItems="center"
               flexDirection="column"
-              gap="24px"
+              gap={{ base: "16px", md: "24px" }}
               backgroundImage="url('/img/dashboards/pattern.svg')"
               backgroundRepeat="repeat-y"
               backgroundPosition="center"
@@ -48,10 +48,10 @@ export default function Presensi(props: { [x: string]: any }) {
 
             <Card
               boxShadow="lg"
-              p="32px"
+              p={{ base: "24px", md: "32px" }}
               alignItems="center"
               flexDirection="column"
-              gap="10px"
+              gap={{ base: "16px", md: "24px" }}
               backgroundImage="url('/img/dashboards/pattern.svg')"
               backgroundRepeat="repeat-y"
               backgroundPosition="center"
@@ -66,10 +66,10 @@ export default function Presensi(props: { [x: string]: any }) {
             
             <Card
               boxShadow="lg"
-              p="32px"
+              p={{ base: "24px", md: "32px" }}
               alignItems="center"
               flexDirection="column"
-              gap="24px"
+              gap={{ base: "16px", md: "24px" }}
               backgroundImage="url('/img/dashboards/pattern.svg')"
               backgroundRepeat="repeat-y"
               backgroundPosition="center"
@@ -79,73 +79,41 @@ export default function Presensi(props: { [x: string]: any }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading fontSize="3xl" fontWeight="semibold">
+                <Heading fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="semibold">
                   Lihat Juga
                 </Heading>
               </Box>
 
-              <VStack spacing={3  } align="left" w="full">
-
-              <Link href="/dashboard/studi">
-                <Flex
-                  alignItems="center"
-                  gap="6"
-                  w="full"
-                  p="2"
-                  rounded="lg"
-                  transition="all 0.2s ease-in-out"
-                  _hover={{ bg: "biru.100" }}
-                  cursor="pointer"
-                >
-                  <Box>
-                    <Image
-                      src="/img/icons/studi.png"
-                      h="40px"
-                      w="40px"
-                      alt="info"
-                    />
-                  </Box>
-                  <Box>
-                    <Text fontSize="2xl" fontWeight="medium">
-                      Kemajuan Studi
-                    </Text>
-                    <Text fontSize="lg" fontWeight="normal">
-                      Klik disini untuk mengakses halaman Kemajuan Studi!
-                    </Text>
-                  </Box>
-                </Flex>
+              <VStack spacing={{ base:'1',md:'3' }} align="left" w="full">
+                <Link href="/dashboard/studi">
+                  <Flex
+                    alignItems="center"
+                    gap="6"
+                    w="full"
+                    p="2"
+                    rounded="lg"
+                    transition="all 0.2s ease-in-out"
+                    _hover={{ bg: "biru.100" }}
+                    cursor="pointer"
+                  >
+                    <Box>
+                      <Image
+                        src="/img/icons/studi.png"
+                        h={{ base:'30px',md:"40px" }}
+                        w={{ base:'30px',md:"40px" }}
+                        alt="info"
+                      />
+                    </Box>
+                    <Box>
+                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="medium">
+                        Kemajuan Studi
+                      </Text>
+                      <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">
+                        Klik disini untuk mengakses halaman Kemajuan Studi!
+                      </Text>
+                    </Box>
+                  </Flex>
                 </Link>
-
-                <Link href="/dashboard/ekstrakurikuler">
-                <Flex
-                  alignItems="center"
-                  gap="6"
-                  w="full"
-                  p="2"
-                  rounded="lg"
-                  transition="all 0.2s ease-in-out"
-                  _hover={{ bg: "biru.100" }}
-                  cursor="pointer"
-                >
-                  <Box>
-                    <Image
-                      src="/img/icons/ekskul.png"
-                      h="40px"
-                      w="40px"
-                      alt="info"
-                    />
-                  </Box>
-                  <Box>
-                    <Text fontSize="2xl" fontWeight="medium">
-                      Ekstrakurikuler
-                    </Text>
-                    <Text fontSize="lg" fontWeight="normal">
-                      Klik disini untuk mengakses halaman Ekstrakurikuler!
-                    </Text>
-                  </Box>
-                </Flex>
-                </Link>
-
 
                 <Link href="/dashboard/biaya">
                   <Flex
@@ -161,17 +129,47 @@ export default function Presensi(props: { [x: string]: any }) {
                     <Box>
                       <Image
                         src="/img/icons/biaya.png"
-                        h="40px"
-                        w="40px"
+                        h={{ base:'30px',md:"40px" }}
+                        w={{ base:'30px',md:"40px" }}
                         alt="info"
                       />
                     </Box>
                     <Box>
-                      <Text fontSize="2xl" fontWeight="medium">
+                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="medium">
                         Biaya Pendidikan
                       </Text>
-                      <Text fontSize="lg" fontWeight="normal">
+                      <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">
                         Klik disini untuk mengakses halaman Biaya Pendidikan!
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Link>
+
+                <Link href="/dashboard/ekstrakurikuler">
+                  <Flex
+                    alignItems="center"
+                    gap="6"
+                    w="full"
+                    p="2"
+                    rounded="lg"
+                    transition="all 0.2s ease-in-out"
+                    _hover={{ bg: "biru.100" }}
+                    cursor="pointer"
+                  >
+                    <Box>
+                      <Image
+                        src="/img/icons/ekskul.png"
+                        h={{ base:'30px',md:"40px" }}
+                        w={{ base:'30px',md:"40px" }}
+                        alt="info"
+                      />
+                    </Box>
+                    <Box>
+                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="medium">
+                        Ekstrakurikuler
+                      </Text>
+                      <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">
+                        Klik disini untuk mengakses halaman Ekstrakurikuler!
                       </Text>
                     </Box>
                   </Flex>

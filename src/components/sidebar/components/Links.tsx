@@ -76,7 +76,7 @@ export function SidebarLinks(props: SidebarLinksProps) {
                         {route.icon}
                       </Box>
                       <Text
-                        fontSize="xl"
+                        fontSize={{ base:'md',md:"xl" }}
                         me="auto"
                         color={
                           activeRoute(route.path.toLowerCase())

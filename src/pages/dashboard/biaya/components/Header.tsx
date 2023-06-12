@@ -1,27 +1,54 @@
-import { Avatar, Flex, Text, VStack } from "@chakra-ui/react";
+import {
+  Avatar,
+  Flex,
+  Text,
+  useBreakpointValue,
+  VStack,
+} from "@chakra-ui/react";
 
 const HeaderProfile = () => {
+  const avatarSize = useBreakpointValue({ base: "md", md: "lg" });
   return (
-    <Flex alignItems="center" w="full" justifyContent="space-between">
+    <Flex
+      alignItems="center"
+      w="full"
+      direction={{ base: "column", md: "row" }}
+      gap="16px"
+      justifyContent={{ base: "", md: "space-between" }}
+    >
       <Flex alignItems="center">
-        <Avatar size="lg" name="avatar" src="/img/avatars/avatar.png" />
+        <Avatar size={avatarSize} name="avatar" src="/img/avatars/avatar.png" />
         <VStack ml="8" align="flex-start" spacing="0">
-          <Text fontSize="2xl" fontWeight="medium">
+          <Text fontSize={{ base: "lg", md: "2xl" }} fontWeight="medium">
             Arkan Aulia Farhan
           </Text>
-          <Text fontSize="xl">05111940000128</Text>
-          <Text fontSize="xl" color="gray.500">
+          <Text fontSize={{ base: "lg", md: "xl" }}>05111940000128</Text>
+          <Text fontSize={{ base: "lg", md: "xl" }} color="gray.500">
             Teknik Informatika 2019
           </Text>
         </VStack>
       </Flex>
-      <Flex alignItems="center" flexDirection="row" gap="32px">
-        <Flex direction='column' gap='1' px='6' py='4' boxShadow='sm' border='1px' borderColor='biru.100' rounded='2xl' bg='white'>
-          <Text color='gray.600' fontSize='lg'>Status Pembayaran</Text>
-          <Text fontSize="3xl" fontWeight="medium" color='red.500'>Belum Lunas</Text>
-        </Flex>
+
+      <Flex
+        direction="column"
+        gap={{ md:"1" }}
+        px={{ base: "0", md: "6" }}
+        py={{ base: "0", md: "4" }}
+        boxShadow={{ base: "", md: "sm" }}
+        border={{ base: "", md: "1px" }}
+        borderColor={{ base: "biru.100", md: "biru.100" }}
+        rounded="2xl"
+        bg={{ base: "", md: "white" }}
+      >
+        <Text color="gray.600" fontSize={{ base:'md',md:"lg" }}>
+          Status Pembayaran
+        </Text>
+        <Text fontSize={{ base:'2xl',md:"3xl" }} fontWeight="medium" color="red.500">
+          Belum Lunas
+        </Text>
       </Flex>
     </Flex>
+
   );
 };
 

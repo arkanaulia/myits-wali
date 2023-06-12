@@ -6,33 +6,60 @@ const AkademikTab = () => {
   const sksTotal = 144;
   const statusMahasiswa = "Aktif";
   return (
-    <Flex alignItems="center" w="full" flexDirection="row" gap="32px">
+    <Flex
+      alignItems={{ base: "left", md: "center" }}
+      w="full"
+      flexDirection="row"
+      gap={{ base:'20px',md:"24px" }}
+    >
       <Box alignItems="center" flexDirection="column">
-        <Text fontSize="xl" color="gray.500" fontWeight="normal">
+        <Text
+          fontSize={{ base: "md", md: "xl" }}
+          color="gray.500"
+          fontWeight="normal"
+        >
           IPK
         </Text>
-        <Text fontSize="3xl" fontWeight="medium">
+        <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="medium">
           {ipk}
         </Text>
       </Box>
       <Box alignItems="center" flexDirection="column">
-        <Text fontSize="xl" color="gray.500" fontWeight="normal">
+        <Text
+          fontSize={{ base: "md", md: "xl" }}
+          color="gray.500"
+          fontWeight="normal"
+        >
           SKS Lulus
         </Text>
         <Flex alignItems="end" gap="1">
-          <Text fontSize="3xl" fontWeight="medium">
+          <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="medium">
             {sksTempuh}
           </Text>
-          <Text fontSize="xl" color="gray.500" fontWeight="medium">
-            {sksTotal}
+          <Text
+            fontSize={{ base: "md", md: "xl" }}
+            color="gray.500"
+            fontWeight="medium"
+            mb='1'
+          >
+            /{sksTotal}
           </Text>
         </Flex>
       </Box>
       <Box alignItems="center" flexDirection="column">
-        <Text fontSize="xl" color="gray.500" fontWeight="normal">
+        <Text
+          fontSize={{ base: "md", md: "xl" }}
+          color="gray.500"
+          fontWeight="normal"
+          noOfLines={1}
+        >
           Status Mahasiswa
         </Text>
-        <Text fontSize="3xl" color="green.500" fontWeight="medium">
+        <Text
+          fontSize={{ sm: "2xl", md: "3xl" }}
+          color="green.500"
+          fontWeight="medium"
+        >
           {statusMahasiswa}
         </Text>
       </Box>

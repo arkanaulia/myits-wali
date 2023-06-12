@@ -23,25 +23,25 @@ const EkskulList = ({ data }: EkskulListProps) => {
       {data.map((item) => (
         <Flex w="full" direction="column" key={item.id}>
           {item.nama && (
-            <Flex justifyContent="space-between" mt="4" alignItems="center" w="full">
+            <Flex justifyContent="space-between" mt={{ base:'2',md:"4" }} alignItems="center" w="full">
               <Flex alignItems="center" gap="4">
-                <Box>
-                  <Image src={`/img/icons/${item.icon}.png`} h="40px" w="40px" alt="medali" />
+                <Box w='40px'>
+                  <Image src={`/img/icons/${item.icon}.png`} h={{ base:'30px',md:"40px" }} w={{ base:'30px',md:"40px" }} alt="medali" />
                 </Box>
                 <Box>
-                  <Text fontSize="xl" fontWeight="medium">
+                  <Text fontSize={{ base:'lg',md:"xl" }} fontWeight="medium">
                     {item.nama}
                   </Text>
-                  <Text fontSize="lg" fontWeight="normal">
+                  <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">
                     {item.desc}
                   </Text>
                 </Box>
               </Flex>
-              <Flex direction="column" alignItems="end">
-                <Text fontSize="xl" fontWeight="medium">
+              <Flex display={{ base:'none', md:'block' }} direction="column" alignItems="end">
+                <Text fontSize={{ base:'lg',md:"xl" }} fontWeight="medium">
                   {item.jenis}
                 </Text>
-                <Text fontSize="lg" fontWeight="normal">
+                <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">
                   {item.waktu}
                 </Text>
               </Flex>

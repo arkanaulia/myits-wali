@@ -8,24 +8,24 @@ import ProfileTab from "./components/ProfileTab";
 import AkademikTab from "./components/AkademikTab";
 import EkskulTab from "./components/EkskulTab";
 import Link from "next/link";
-import {MdArrowForwardIos} from 'react-icons/md'
+import { MdArrowForwardIos } from "react-icons/md";
 
-export default function Beranda(props: { [x: string]: any }) {
+export default function Beranda(props: { [x: string]: unknown }) {
   // Chakra Color Mode
   const { ...rest } = props;
 
   return (
     <AdminLayout>
-      <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
+      <Box pt={{ base: "40px", md: "80px", xl: "80px" }}>
         <>
-          <Flex direction="column" gap="24px">
+          <Flex direction="column" gap={{ base:'20px',md:"24px" }}>
             <Banner />
             <Card
               boxShadow="lg"
-              p="32px"
+              p={{ base: "24px", md: "32px" }}
               alignItems="center"
               flexDirection="column"
-              gap="24px"
+              gap={{ base: "16px", md: "24px" }}
               backgroundImage="url('/img/dashboards/pattern.svg')"
               backgroundRepeat="repeat-y"
               backgroundPosition="center"
@@ -35,14 +35,18 @@ export default function Beranda(props: { [x: string]: any }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading fontSize="3xl" fontWeight="semibold">
+                <Heading
+                  fontSize={{ sm: "2xl", md: "3xl" }}
+                  fontWeight="semibold"
+                >
                   Anak Wali
                 </Heading>
               </Box>
               <ProfileTab />
               <Link href="/dashboard/profil">
                 <Button
-                rightIcon={<MdArrowForwardIos />}
+                  fontSize={{ base: "md", md: "lg" }}
+                  rightIcon={<MdArrowForwardIos />}
                   colorScheme="blue"
                   fontWeight="medium"
                   variant="its"
@@ -57,10 +61,10 @@ export default function Beranda(props: { [x: string]: any }) {
 
             <Card
               boxShadow="lg"
-              p="32px"
+              p={{ base: "24px", md: "32px" }}
               alignItems="center"
               flexDirection="column"
-              gap="24px"
+              gap={{ base: "16px", md: "24px" }}
               backgroundImage="url('/img/dashboards/pattern.svg')"
               backgroundRepeat="repeat-y"
               backgroundPosition="center"
@@ -70,14 +74,18 @@ export default function Beranda(props: { [x: string]: any }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading fontSize="3xl" fontWeight="semibold">
+                <Heading
+                  fontSize={{ sm: "2xl", md: "3xl" }}
+                  fontWeight="semibold"
+                >
                   Akademik
                 </Heading>
               </Box>
               <AkademikTab />
               <Link href="/dashboard/studi">
                 <Button
-                rightIcon={<MdArrowForwardIos />}
+                  fontSize={{ base: "md", md: "lg" }}
+                  rightIcon={<MdArrowForwardIos />}
                   colorScheme="blue"
                   fontWeight="medium"
                   variant="its"
@@ -92,10 +100,10 @@ export default function Beranda(props: { [x: string]: any }) {
 
             <Card
               boxShadow="lg"
-              p="32px"
+              p={{ base: "24px", md: "32px" }}
               alignItems="center"
               flexDirection="column"
-              gap="24px"
+              gap={{ base: "16px", md: "24px" }}
               backgroundImage="url('/img/dashboards/pattern.svg')"
               backgroundRepeat="repeat-y"
               backgroundPosition="center"
@@ -105,14 +113,18 @@ export default function Beranda(props: { [x: string]: any }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading fontSize="3xl" fontWeight="semibold">
+                <Heading
+                  fontSize={{ sm: "2xl", md: "3xl" }}
+                  fontWeight="semibold"
+                >
                   Ekstrakulikuler
                 </Heading>
               </Box>
               <EkskulTab />
               <Link href="/dashboard/ekstrakurikuler">
                 <Button
-                rightIcon={<MdArrowForwardIos />}
+                  fontSize={{ base: "md", md: "lg" }}
+                  rightIcon={<MdArrowForwardIos />}
                   colorScheme="blue"
                   fontWeight="medium"
                   variant="its"
@@ -127,10 +139,10 @@ export default function Beranda(props: { [x: string]: any }) {
 
             <Card
               boxShadow="lg"
-              p="32px"
+              p={{ base: "24px", md: "32px" }}
               alignItems="center"
               flexDirection="column"
-              gap="24px"
+              gap={{ base: "16px", md: "24px" }}
               backgroundImage="url('/img/dashboards/pattern.svg')"
               backgroundRepeat="repeat-y"
               backgroundPosition="center"
@@ -140,33 +152,45 @@ export default function Beranda(props: { [x: string]: any }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading fontSize="3xl" fontWeight="semibold">
+                <Heading
+                  fontSize={{ sm: "2xl", md: "3xl" }}
+                  fontWeight="semibold"
+                >
                   Biaya Pendidikan
                 </Heading>
               </Box>
-              <Flex justifyContent="space-between" alignItems="center" w="full">
-                <Flex alignItems="center" gap="6">
-                  <Box>
-                    <Text fontSize="xl" color="gray.500" fontWeight="normal">
-                      Tagihan UKT
-                    </Text>
-                    <Text fontSize="3xl" color="red.600" fontWeight="medium">
-                      Rp. 7.500.000,00
-                    </Text>
-                  </Box>
+
+              <Flex
+                justifyContent={{ base: "left", md: "space-between" }}
+                
+                direction={{ base: "column", md: "row" }}
+                gap='3'
+                w="full"
+              >
+                <Flex direction="column" alignItems="start">
+                  <Text fontSize={{ base:'lg',md:"xl" }} color="gray.500" fontWeight="normal">
+                    Tagihan UKT
+                  </Text>
+                  <Text fontSize={{ base:'xl',md:"3xl" }} color="red.600" fontWeight="medium">
+                    Rp. 7.500.000,00
+                  </Text>
                 </Flex>
-                <Flex direction="column" alignItems="end">
-                  <Text fontSize="xl" color="gray.500" fontWeight="normal">
+                <Flex
+                  direction="column"
+                  alignItems={{ base: "start", md: "end" }}
+                >
+                  <Text fontSize={{ base:'lg',md:"xl" }} color="gray.500" fontWeight="normal">
                     Batas Waktu Pembayaran
                   </Text>
-                  <Text fontSize="3xl" fontWeight="medium">
+                  <Text fontSize={{ base:'xl',md:"3xl" }} fontWeight="medium">
                     25 Desember 2023
                   </Text>
                 </Flex>
               </Flex>
               <Link href="/dashboard/biaya">
                 <Button
-                rightIcon={<MdArrowForwardIos />}
+                  fontSize={{ base: "md", md: "lg" }}
+                  rightIcon={<MdArrowForwardIos />}
                   colorScheme="blue"
                   fontWeight="medium"
                   variant="its"
@@ -176,15 +200,15 @@ export default function Beranda(props: { [x: string]: any }) {
                 >
                   Lihat Ekstrakulikuler Lainnya
                 </Button>
-              </Link> 
+              </Link>
             </Card>
 
             <Card
               boxShadow="lg"
-              p="32px"
+              p={{ base: "24px", md: "32px" }}
               alignItems="center"
               flexDirection="column"
-              gap="24px"
+              gap={{ base: "16px", md: "24px" }}
               backgroundImage="url('/img/dashboards/pattern.svg')"
               backgroundRepeat="repeat-y"
               backgroundPosition="center"
@@ -194,7 +218,10 @@ export default function Beranda(props: { [x: string]: any }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading fontSize="3xl" fontWeight="semibold">
+                <Heading
+                  fontSize={{ sm: "2xl", md: "3xl" }}
+                  fontWeight="semibold"
+                >
                   Ada Kesulitan?
                 </Heading>
               </Box>
@@ -203,7 +230,7 @@ export default function Beranda(props: { [x: string]: any }) {
                 alignItems="center"
                 gap="6"
                 w="full"
-                p="2"
+                p={{ sm:'0',md:"2" }}
                 rounded="lg"
                 transition="all 0.2s ease-in-out"
                 _hover={{ bg: "biru.100" }}
@@ -217,10 +244,10 @@ export default function Beranda(props: { [x: string]: any }) {
                   />
                 </Box>
                 <Box>
-                  <Text fontSize="2xl" fontWeight="medium">
+                  <Text fontSize={{ sm: "xl", md: "2xl" }} fontWeight="medium">
                     Hubungi Service Desk
                   </Text>
-                  <Text fontSize="lg" fontWeight="normal">
+                  <Text fontSize={{ sm: "md", md: "lg" }} fontWeight="normal">
                     Klik disini untuk bertanya terkait aplikasi myITS Wali
                   </Text>
                 </Box>
