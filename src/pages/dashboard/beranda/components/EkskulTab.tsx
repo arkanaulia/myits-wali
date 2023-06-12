@@ -47,7 +47,7 @@ import {
         >
           Nilai SKEM
         </Text>
-        <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="medium">
+        <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="500">
           {ipkSkem}
         </Text>
       </Box>
@@ -60,13 +60,13 @@ import {
           SKS SKEM
         </Text>
         <Flex alignItems="end" gap="1">
-          <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="medium">
+          <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="500">
             {kreditSkem}
           </Text>
           <Text
             fontSize={{ base: "md", md: "xl" }}
             color="gray.500"
-            fontWeight="medium"
+            fontWeight="500"
             mb='1'
           >
             /{totalSkem}
@@ -85,7 +85,7 @@ import {
         <Text
           fontSize={{ sm: "2xl", md: "3xl" }}
           color="green.500"
-          fontWeight="medium"
+          fontWeight="500"
         >
           {statusLulus}
         </Text>
@@ -115,7 +115,7 @@ import {
                  />
                </Box>
                <Box>
-                 <Text noOfLines={1} fontSize={{ base:'lg',md:"2xl" }} fontWeight="medium">
+                 <Text noOfLines={1} fontSize={{ base:'lg',md:"2xl" }} fontWeight="500">
                    {kegiatan.title}
                  </Text>
                  <Text fontSize={{ base:'lg',md:"xl" }} fontWeight="normal">
@@ -124,7 +124,7 @@ import {
                </Box>
              </Flex>
              <Flex display={{ base:'none', md:'block' }} direction="column" alignItems="end">
-               <Text fontSize="xl" fontWeight="medium" mb="1">
+               <Text fontSize="xl" fontWeight="500" mb="1">
                 {kegiatan.jenis}
                </Text>
                <Text fontSize="xl" fontWeight="normal">

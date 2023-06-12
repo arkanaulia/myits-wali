@@ -64,7 +64,7 @@ const ProfileTab = () => {
           align='flex-start'
           spacing="0"
         >
-          <Text fontSize={{ base:'lg',md:"2xl" }} fontWeight="medium">
+          <Text fontSize={{ base:'lg',md:"2xl" }} fontWeight="500">
             {child.name}
           </Text>
           <Text fontSize={{ base:'md',md:"2xl" }}>NRP: {child.nrp}</Text>
@@ -102,7 +102,7 @@ const ProfileTab = () => {
                     w="full"
                     size="lg"
                     rounded="lg"
-                    fontWeight="medium"
+                    fontWeight="500"
                     onClick={() => handleSelectChild(index)}
                   >
                     {child.name}
@@ -150,7 +150,7 @@ const ProfileTab = () => {
             w="full"
             size="lg"
             rounded="lg"
-            fontWeight="medium"
+            fontWeight="500"
             onClick={() => setIsModalOpen(true)}
             rightIcon={<HiSwitchVertical />}
           >

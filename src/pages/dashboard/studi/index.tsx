@@ -1,4 +1,4 @@
-import { Avatar, Box, Flex, Text, VStack, Heading, useBreakpointValue } from "@chakra-ui/react";
+import { Avatar, Box, Flex, Text, VStack, useBreakpointValue } from "@chakra-ui/react";
 
 import AdminLayout from "layouts/admin";
 import { Image } from "components/image/Image";
@@ -14,7 +14,7 @@ const ProfileTab = () => {
       <Flex alignItems="center">
         <Avatar size={avatarSize} name="avatar" src="/img/avatars/avatar.png" />
         <VStack ml="8" align="flex-start" spacing="0">
-          <Text fontSize={{ base:'lg',md:"2xl" }}  fontWeight="medium">
+          <Text fontSize={{ base:'lg',md:"2xl" }}  fontWeight="500">
             Arkan Aulia Farhan
           </Text>
           <Text fontSize={{ base:'lg',md:"xl" }} >05111940000128</Text>
@@ -42,7 +42,7 @@ const ProfileTab = () => {
           <Text fontSize={{ base:'md',md:"xl" }} color="gray.500" fontWeight="normal">
             IPK
           </Text>
-          <Text fontSize={{ base:'xl',md:"3xl" }} fontWeight="medium">
+          <Text fontSize={{ base:'xl',md:"3xl" }} fontWeight="500">
             3.85
           </Text>
         </Box>
@@ -51,10 +51,10 @@ const ProfileTab = () => {
             SKS Lulus
           </Text>
           <Flex alignItems="end" gap="1">
-            <Text fontSize={{ base:'xl',md:"3xl" }} fontWeight="medium">
+            <Text fontSize={{ base:'xl',md:"3xl" }} fontWeight="500">
               120
             </Text>
-            <Text mb='1' fontSize={{ base:'md',md:"xl" }} color="gray.500" fontWeight="medium">
+            <Text mb='1' fontSize={{ base:'md',md:"xl" }} color="gray.500" fontWeight="500">
               /144
             </Text>
           </Flex>
@@ -63,7 +63,7 @@ const ProfileTab = () => {
           <Text fontSize={{ base:'md',md:"xl" }} color="gray.500" noOfLines={1} fontWeight="normal">
             Status Mahasiswa
           </Text>
-          <Text fontSize={{ base:'xl',md:"3xl" }} color="green.500" fontWeight="medium">
+          <Text fontSize={{ base:'xl',md:"3xl" }} color="green.500" fontWeight="500">
             Aktif
           </Text>
         </Box>
@@ -212,7 +212,7 @@ export default function studi(props: { [x: string]: any }) {
                 />
               </Box>
 
-              <Text fontSize={{ base:'2xl',md:"3xl" }} fontWeight="semibold">
+              <Text fontSize={{ base:'2xl',md:"3xl" }} fontWeight="600">
                 Kemajuan Studi
               </Text>
             </Flex>
@@ -251,9 +251,9 @@ export default function studi(props: { [x: string]: any }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="semibold">
+                <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="500">
                   Detail Nilai
-                </Heading>
+                </Text>
               </Box>
               <Flex w="100%" direction="column" gap={{ base:'10px',md:"4px" }}>
                 <Dropdown data={data1} />
@@ -280,9 +280,9 @@ export default function studi(props: { [x: string]: any }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="semibold">
+                <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="500">
                   Lihat Juga
-                </Heading>
+                </Text>
               </Box>
 
               <VStack spacing={{ base:'1',md:'3' }} align="left" w="full">
@@ -306,7 +306,7 @@ export default function studi(props: { [x: string]: any }) {
                       />
                     </Box>
                     <Box>
-                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="medium">
+                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="500">
                         Ekstrakurikuler
                       </Text>
                       <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">
@@ -336,7 +336,7 @@ export default function studi(props: { [x: string]: any }) {
                       />
                     </Box>
                     <Box>
-                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="medium">
+                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="500">
                         Biaya Pendidikan
                       </Text>
                       <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">
@@ -366,7 +366,7 @@ export default function studi(props: { [x: string]: any }) {
                       />
                     </Box>
                     <Box>
-                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="medium">
+                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="500">
                         Presensi
                       </Text>
                       <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">

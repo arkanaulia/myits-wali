@@ -29,7 +29,7 @@ const EkskulList = ({ data }: EkskulListProps) => {
                   <Image src={`/img/icons/${item.icon}.png`} h={{ base:'30px',md:"40px" }} w={{ base:'30px',md:"40px" }} alt="medali" />
                 </Box>
                 <Box>
-                  <Text fontSize={{ base:'lg',md:"xl" }} fontWeight="medium">
+                  <Text fontSize={{ base:'lg',md:"xl" }} fontWeight="500">
                     {item.nama}
                   </Text>
                   <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">
@@ -38,7 +38,7 @@ const EkskulList = ({ data }: EkskulListProps) => {
                 </Box>
               </Flex>
               <Flex display={{ base:'none', md:'block' }} direction="column" alignItems="end">
-                <Text fontSize={{ base:'lg',md:"xl" }} fontWeight="medium">
+                <Text fontSize={{ base:'lg',md:"xl" }} fontWeight="500">
                   {item.jenis}
                 </Text>
                 <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">

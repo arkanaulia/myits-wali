@@ -1,4 +1,4 @@
-import { Box, Flex, Text, VStack, Heading } from "@chakra-ui/react";
+import { Box, Flex, Text, VStack, } from "@chakra-ui/react";
 
 import AdminLayout from "layouts/admin";
 import { Image } from "components/image/Image";
@@ -56,7 +56,7 @@ export default function Presensi(props: { [x: string]: any }) {
                 />
               </Box>
 
-              <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="semibold">
+              <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="600">
                 Profil
               </Text>
             </Flex>
@@ -92,12 +92,12 @@ export default function Presensi(props: { [x: string]: any }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading
+                <Text
                   fontSize={{ sm: "2xl", md: "3xl" }}
-                  fontWeight="semibold"
+                  fontWeight="500"
                 >
                   Biodata
-                </Heading>
+                </Text>
               </Box>
               <ProfilData data={bio} />
             </Card>
@@ -116,12 +116,12 @@ export default function Presensi(props: { [x: string]: any }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading
+                <Text
                   fontSize={{ sm: "2xl", md: "3xl" }}
-                  fontWeight="semibold"
+                  fontWeight="500"
                 >
                   Akademik
-                </Heading>
+                </Text>
               </Box>
               <ProfilData data={akademik} />
             </Card>
@@ -140,12 +140,12 @@ export default function Presensi(props: { [x: string]: any }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading
+                <Text
                   fontSize={{ sm: "2xl", md: "3xl" }}
-                  fontWeight="semibold"
+                  fontWeight="500"
                 >
                   Orang Tua / Wali
-                </Heading>
+                </Text>
               </Box>
               <ProfilData data={ortu} />
             </Card>
@@ -165,12 +165,12 @@ export default function Presensi(props: { [x: string]: any }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading
+                <Text
                   fontSize={{ sm: "2xl", md: "3xl" }}
-                  fontWeight="semibold"
+                  fontWeight="500"
                 >
                   Ada Kesulitan?
-                </Heading>
+                </Text>
               </Box>
 
               <Flex
@@ -191,7 +191,7 @@ export default function Presensi(props: { [x: string]: any }) {
                   />
                 </Box>
                 <Box>
-                  <Text fontSize={{ sm: "xl", md: "2xl" }} fontWeight="medium">
+                  <Text fontSize={{ sm: "xl", md: "2xl" }} fontWeight="500">
                     Hubungi Service Desk
                   </Text>
                   <Text fontSize={{ sm: "md", md: "lg" }} fontWeight="normal">
@@ -215,12 +215,12 @@ export default function Presensi(props: { [x: string]: any }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading
+                <Text
                   fontSize={{ sm: "2xl", md: "3xl" }}
-                  fontWeight="semibold"
+                  fontWeight="500"
                 >
                   Lihat Juga
-                </Heading>
+                </Text>
               </Box>
 
               <VStack spacing={{ base: "1", md: "3" }} align="left" w="full">
@@ -246,7 +246,7 @@ export default function Presensi(props: { [x: string]: any }) {
                     <Box>
                       <Text
                         fontSize={{ base: "xl", md: "2xl" }}
-                        fontWeight="medium"
+                        fontWeight="500"
                       >
                         Kemajuan Studi
                       </Text>
@@ -282,7 +282,7 @@ export default function Presensi(props: { [x: string]: any }) {
                     <Box>
                       <Text
                         fontSize={{ base: "xl", md: "2xl" }}
-                        fontWeight="medium"
+                        fontWeight="500"
                       >
                         Ekstrakurikuler
                       </Text>
@@ -318,7 +318,7 @@ export default function Presensi(props: { [x: string]: any }) {
                     <Box>
                       <Text
                         fontSize={{ base: "xl", md: "2xl" }}
-                        fontWeight="medium"
+                        fontWeight="500"
                       >
                         Presensi
                       </Text>

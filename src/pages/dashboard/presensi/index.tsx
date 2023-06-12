@@ -1,4 +1,4 @@
-import { Box, Flex, Text, VStack, Heading } from "@chakra-ui/react";
+import { Box, Flex, Text, VStack } from "@chakra-ui/react";
 
 import AdminLayout from "layouts/admin";
 import { Image } from "components/image/Image";
@@ -25,7 +25,7 @@ export default function Presensi(props: { [x: string]: any }) {
                 />
               </Box>
 
-              <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="semibold">
+              <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="600">
                 Presensi
               </Text>
             </Flex>
@@ -79,9 +79,9 @@ export default function Presensi(props: { [x: string]: any }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="semibold">
+                <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="500">
                   Lihat Juga
-                </Heading>
+                </Text>
               </Box>
 
               <VStack spacing={{ base:'1',md:'3' }} align="left" w="full">
@@ -105,7 +105,7 @@ export default function Presensi(props: { [x: string]: any }) {
                       />
                     </Box>
                     <Box>
-                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="medium">
+                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="500">
                         Kemajuan Studi
                       </Text>
                       <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">
@@ -135,7 +135,7 @@ export default function Presensi(props: { [x: string]: any }) {
                       />
                     </Box>
                     <Box>
-                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="medium">
+                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="500">
                         Biaya Pendidikan
                       </Text>
                       <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">
@@ -165,7 +165,7 @@ export default function Presensi(props: { [x: string]: any }) {
                       />
                     </Box>
                     <Box>
-                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="medium">
+                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="500">
                         Ekstrakurikuler
                       </Text>
                       <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">

@@ -20,7 +20,7 @@ const AkademikTab = () => {
         >
           IPK
         </Text>
-        <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="medium">
+        <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="500">
           {ipk}
         </Text>
       </Box>
@@ -33,13 +33,13 @@ const AkademikTab = () => {
           SKS Lulus
         </Text>
         <Flex alignItems="end" gap="1">
-          <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="medium">
+          <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="500">
             {sksTempuh}
           </Text>
           <Text
             fontSize={{ base: "md", md: "xl" }}
             color="gray.500"
-            fontWeight="medium"
+            fontWeight="500"
             mb='1'
           >
             /{sksTotal}
@@ -58,7 +58,7 @@ const AkademikTab = () => {
         <Text
           fontSize={{ sm: "2xl", md: "3xl" }}
           color="green.500"
-          fontWeight="medium"
+          fontWeight="500"
         >
           {statusMahasiswa}
         </Text>

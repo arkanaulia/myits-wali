@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Button, Heading } from "@chakra-ui/react";
+import { Box, Flex, Text, Button } from "@chakra-ui/react";
 
 import AdminLayout from "layouts/admin";
 import { Image } from "components/image/Image";
@@ -35,12 +35,12 @@ export default function Beranda(props: { [x: string]: unknown }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading
+                <Text
                   fontSize={{ sm: "2xl", md: "3xl" }}
-                  fontWeight="semibold"
+                  fontWeight="500"
                 >
                   Anak Wali
-                </Heading>
+                </Text>
               </Box>
               <ProfileTab />
               <Link href="/dashboard/profil">
@@ -48,7 +48,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
                   fontSize={{ base: "md", md: "lg" }}
                   rightIcon={<MdArrowForwardIos />}
                   colorScheme="blue"
-                  fontWeight="medium"
+                  fontWeight="500"
                   variant="its"
                   w="full"
                   size="lg"
@@ -74,12 +74,12 @@ export default function Beranda(props: { [x: string]: unknown }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading
+                <Text
                   fontSize={{ sm: "2xl", md: "3xl" }}
-                  fontWeight="semibold"
+                  fontWeight="500"
                 >
                   Akademik
-                </Heading>
+                </Text>
               </Box>
               <AkademikTab />
               <Link href="/dashboard/studi">
@@ -87,7 +87,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
                   fontSize={{ base: "md", md: "lg" }}
                   rightIcon={<MdArrowForwardIos />}
                   colorScheme="blue"
-                  fontWeight="medium"
+                  fontWeight="500"
                   variant="its"
                   w="full"
                   size="lg"
@@ -113,12 +113,12 @@ export default function Beranda(props: { [x: string]: unknown }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading
+                <Text
                   fontSize={{ sm: "2xl", md: "3xl" }}
-                  fontWeight="semibold"
+                  fontWeight="500"
                 >
                   Ekstrakulikuler
-                </Heading>
+                </Text>
               </Box>
               <EkskulTab />
               <Link href="/dashboard/ekstrakurikuler">
@@ -126,7 +126,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
                   fontSize={{ base: "md", md: "lg" }}
                   rightIcon={<MdArrowForwardIos />}
                   colorScheme="blue"
-                  fontWeight="medium"
+                  fontWeight="500"
                   variant="its"
                   w="full"
                   size="lg"
@@ -152,12 +152,12 @@ export default function Beranda(props: { [x: string]: unknown }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading
+                <Text
                   fontSize={{ sm: "2xl", md: "3xl" }}
-                  fontWeight="semibold"
+                  fontWeight="500"
                 >
                   Biaya Pendidikan
-                </Heading>
+                </Text>
               </Box>
 
               <Flex
@@ -171,7 +171,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
                   <Text fontSize={{ base:'lg',md:"xl" }} color="gray.500" fontWeight="normal">
                     Tagihan UKT
                   </Text>
-                  <Text fontSize={{ base:'xl',md:"3xl" }} color="red.600" fontWeight="medium">
+                  <Text fontSize={{ base:'xl',md:"3xl" }} color="red.600" fontWeight="500">
                     Rp. 7.500.000,00
                   </Text>
                 </Flex>
@@ -182,7 +182,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
                   <Text fontSize={{ base:'lg',md:"xl" }} color="gray.500" fontWeight="normal">
                     Batas Waktu Pembayaran
                   </Text>
-                  <Text fontSize={{ base:'xl',md:"3xl" }} fontWeight="medium">
+                  <Text fontSize={{ base:'xl',md:"3xl" }} fontWeight="500">
                     25 Desember 2023
                   </Text>
                 </Flex>
@@ -192,7 +192,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
                   fontSize={{ base: "md", md: "lg" }}
                   rightIcon={<MdArrowForwardIos />}
                   colorScheme="blue"
-                  fontWeight="medium"
+                  fontWeight="500"
                   variant="its"
                   w="full"
                   size="lg"
@@ -218,12 +218,12 @@ export default function Beranda(props: { [x: string]: unknown }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Heading
+                <Text
                   fontSize={{ sm: "2xl", md: "3xl" }}
-                  fontWeight="semibold"
+                  fontWeight="500"
                 >
                   Ada Kesulitan?
-                </Heading>
+                </Text>
               </Box>
 
               <Flex
@@ -244,7 +244,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
                   />
                 </Box>
                 <Box>
-                  <Text fontSize={{ sm: "xl", md: "2xl" }} fontWeight="medium">
+                  <Text fontSize={{ sm: "xl", md: "2xl" }} fontWeight="500">
                     Hubungi Service Desk
                   </Text>
                   <Text fontSize={{ sm: "md", md: "lg" }} fontWeight="normal">

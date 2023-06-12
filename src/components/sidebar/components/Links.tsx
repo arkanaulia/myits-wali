@@ -85,7 +85,7 @@ export function SidebarLinks(props: SidebarLinksProps) {
                         }
                         fontWeight={
                           activeRoute(route.path.toLowerCase())
-                            ? "medium"
+                            ? "500"
                             : "normal"
                         }
                       >
@@ -122,7 +122,7 @@ export function SidebarLinks(props: SidebarLinksProps) {
                       }
                       fontWeight={
                         activeRoute(route.path.toLowerCase())
-                          ? "medium"
+                          ? "500"
                           : "normal"
                       }
                     >

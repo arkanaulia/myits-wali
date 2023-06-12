@@ -14,7 +14,7 @@ const DataList = ({ data }: Props) => {
     <Flex direction='column' gap='2' w='full'>
       {data && data.map((item, index) => (
         <Box key={index} w='full' mb={2}>
-          <Text fontSize={{ base:'lg',md:'xl' }} fontWeight="medium">{item.title}</Text>
+          <Text fontSize={{ base:'lg',md:'xl' }} fontWeight="500">{item.title}</Text>
           <Text fontSize={{ base:'lg',md:'xl' }} fontWeight='normal'>{item.value}</Text>
         </Box>
       ))}

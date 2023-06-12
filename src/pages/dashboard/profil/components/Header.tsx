@@ -13,7 +13,7 @@ const HeaderProfile = () => {
       <Flex alignItems="center">
         <Avatar size={avatarSize} name="avatar" src="/img/avatars/avatar.png" />
         <VStack ml="8" align="flex-start" spacing="0">
-          <Text fontSize={{ base: "lg", md: "2xl" }} fontWeight="medium">
+          <Text fontSize={{ base: "lg", md: "2xl" }} fontWeight="500">
             Arkan Aulia Farhan
           </Text>
           <Text fontSize={{ base: "lg", md: "xl" }}>05111940000128</Text>

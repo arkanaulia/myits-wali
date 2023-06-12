@@ -45,7 +45,7 @@ const ChildModal = ({
                   w="full"
                   size="lg"
                   rounded="lg"
-                  fontWeight="medium"
+                  fontWeight="500"
                   onClick={() => handleSelectChild(index)}
                 >
                   {child?.name}

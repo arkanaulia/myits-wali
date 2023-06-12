@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import {
   Box,
-  Heading,
   Select,
   VStack,
   Flex,
@@ -100,13 +99,13 @@ const AbsensiComponent = () => {
   return (
     <Box w="100%">
       <Flex mb="6" alignItems="center" justify="space-between">
-        <Heading
+        <Text
           fontSize={{ base: "2xl", md: "3xl" }}
           w={{ base: "28", md: "max-content" }}
-          fontWeight="semibold"
+          fontWeight="500"
         >
           Detail Absensi
-        </Heading>
+        </Text>
         <Box>
           <Select
             bg="white"
@@ -169,7 +168,7 @@ const AbsensiComponent = () => {
                   <Text
                     w="full"
                     fontSize={{ base: "xl", md: "2xl" }}
-                    fontWeight="medium"
+                    fontWeight="500"
                   >
                     {absensi.mataKuliah}
                   </Text>
@@ -184,12 +183,12 @@ const AbsensiComponent = () => {
               </Flex>
               <Flex alignItems="center" direction="row">
                 <Flex align="center" direction="column">
-                  <Text fontSize="md" fontWeight="medium" color="green.500">
+                  <Text fontSize="md" fontWeight="500" color="green.500">
                     Kehadiran
                   </Text>
                   <Text
                     fontSize={{ base: "xl", md: "2xl" }}
-                    fontWeight="medium"
+                    fontWeight="500"
                   >
                     100%
                   </Text>
@@ -201,12 +200,12 @@ const AbsensiComponent = () => {
                   h="50px"
                 />
                 <Flex align="center" direction="column">
-                  <Text fontSize="md" fontWeight="medium" color="green.500">
+                  <Text fontSize="md" fontWeight="500" color="green.500">
                     Hadir
                   </Text>
                   <Text
                     fontSize={{ base: "xl", md: "2xl" }}
-                    fontWeight="medium"
+                    fontWeight="500"
                   >
                     {absensi.hadir}
                   </Text>
@@ -218,12 +217,12 @@ const AbsensiComponent = () => {
                   h="50px"
                 />
                 <Flex align="center" direction="column">
-                  <Text fontSize="md" fontWeight="medium" color="red.500">
+                  <Text fontSize="md" fontWeight="500" color="red.500">
                     Absen
                   </Text>
                   <Text
                     fontSize={{ base: "xl", md: "2xl" }}
-                    fontWeight="medium"
+                    fontWeight="500"
                   >
                     {absensi.tidakHadir}
                   </Text>
@@ -255,7 +254,7 @@ const AbsensiComponent = () => {
                       key={absensi.id}
                     >
                       <Flex direction="column" mt="2" gap="1">
-                        <Text w="full" fontSize={{ base:'lg',md:"xl" }} fontWeight="medium">
+                        <Text w="full" fontSize={{ base:'lg',md:"xl" }} fontWeight="500">
                           Pertemuan {keterangan.pertemuan}
                         </Text>
                         <Text fontSize={{ base:'md',md:"lg" }}>{keterangan.date}</Text>
@@ -287,7 +286,7 @@ const AbsensiComponent = () => {
                               : "biru.100"
                           }
                         >
-                          <Text fontWeight="medium">
+                          <Text fontWeight="500">
                             {keterangan.keterangan}
                           </Text>
                         </Center>

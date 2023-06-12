@@ -39,7 +39,7 @@ const Dropdown = ({ data }: DropdownProps) => {
       <Flex
         align="center"
         justify=""
-        direction='row-reverse'
+        direction={{ base:'row-reverse', md:'row' }}
         cursor="pointer"
         onClick={handleToggle}
         w="full"
@@ -68,7 +68,7 @@ const Dropdown = ({ data }: DropdownProps) => {
                 <Text
                   w="full"
                   fontSize={{ base: "xl", md: "2xl" }}
-                  fontWeight="medium"
+                  fontWeight="500"
                 >
                   {item.semester}
                 </Text>
@@ -89,12 +89,12 @@ const Dropdown = ({ data }: DropdownProps) => {
           >
             <Text
               fontSize={{ base: "md", md: "xl" }}
-              fontWeight="medium"
+              fontWeight="500"
               color="green.500"
             >
               Nilai Semester:
             </Text>
-            <Text fontSize={{ base: "lg", md: "2xl" }} fontWeight="medium">
+            <Text fontSize={{ base: "lg", md: "2xl" }} fontWeight="500">
               {ips}
             </Text>
           </Flex>
@@ -119,7 +119,7 @@ const Dropdown = ({ data }: DropdownProps) => {
                   <Text
                     w="full"
                     fontSize={{ base: "md", md: "xl" }}
-                    fontWeight="medium"
+                    fontWeight="500"
                   >
                     {item.name}
                   </Text>
@@ -138,7 +138,7 @@ const Dropdown = ({ data }: DropdownProps) => {
                     bg="biru.100"
                     mb={{ base:'4',md:"0" } }
                   >
-                    <Text fontSize={{ base:'sm',md:'md' }} fontWeight="medium">{item.nilai}</Text>
+                    <Text fontSize={{ base:'sm',md:'md' }} fontWeight="500">{item.nilai}</Text>
                   </Center>
                 )}
               </Flex>

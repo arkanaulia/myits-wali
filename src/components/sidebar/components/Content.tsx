@@ -87,7 +87,7 @@ const ProfileTab = () => {
               <Text fontSize={{ base:'sm',md:"md" }} color="gray.500">
               {childrenData[selectedChild]?.role}
               </Text>
-              <Text fontSize={{ base:'md',md:"xl" }} fontWeight="medium" noOfLines={1}>
+              <Text fontSize={{ base:'md',md:"xl" }} fontWeight="500" noOfLines={1}>
                 {childrenData[selectedChild]?.name}
               </Text>
             </VStack>
