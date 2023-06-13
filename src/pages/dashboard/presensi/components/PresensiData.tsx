@@ -231,7 +231,7 @@ const PresensiComponent = () => {
                 />
                 <Flex align="center" direction="column">
                   <Text fontSize={{ base:'md',md:"lg" }} fontWeight="500" color="yellow.500">
-                    Sakit
+                    Izin
                   </Text>
                   <Text
                     fontSize={{ base: "xl", md: "2xl" }}
@@ -248,7 +248,7 @@ const PresensiComponent = () => {
                 />
                 <Flex align="center" direction="column">
                   <Text fontSize={{ base:'md',md:"lg" }} fontWeight="500" color="blue.500">
-                    Izin
+                    Sakit
                   </Text>
                   <Text
                     fontSize={{ base: "xl", md: "2xl" }}
