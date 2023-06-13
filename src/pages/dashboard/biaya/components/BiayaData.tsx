@@ -11,14 +11,16 @@ const biayaData = [
     status: "Belum Lunas",
     description: "25 Desember 2023",
     semester: "semester1",
+    keterangan: "Batas Waktu Pembayaran"
   },
   {
     id: 2,
     tagihan: "Tagihan IKOMA",
     value: "Rp.500.000,00",
     status: "Lunas",
-    description: "Lunas",
+    description: "20 December 2023",
     semester: "semester1",
+    keterangan: "Tanggal Pelunasan"
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ const biayaData = [
     status: "Belum Lunas",
     description: "25 Desember 2023",
     semester: "semester2",
+    keterangan: "Batas Waktu Pembayaran"
   },
   // ...
 ];
@@ -38,6 +41,7 @@ type Biaya = {
   status: string;
   description: string;
   semester: string;
+  keterangan: string;
 };
 
 const PresensiComponent = () => {
@@ -114,7 +118,7 @@ const PresensiComponent = () => {
                   </Text>
                   <Text
                     fontSize={{ base: "2xl", md: "3xl" }}
-                    color={biaya.status == 'Lunas' ? "green.500" : "red.600"}
+                    
                     fontWeight="500"
                   >
                    {biaya.value}
@@ -127,9 +131,9 @@ const PresensiComponent = () => {
                   color="gray.500"
                   fontWeight="normal"
                 >
-                  Batas Waktu Pembayaran
+                  {biaya.keterangan}
                 </Text>
-                <Text fontSize={{ base: "2xl", md: "3xl" }} color={biaya.status == 'Lunas' ? "green.500" : ""} fontWeight="500">
+                <Text fontSize={{ base: "2xl", md: "3xl" }} color={biaya.status == 'Lunas' ? "green.500" : "red.500"} fontWeight="500">
                 {biaya.description}
                 </Text>
               </Flex>
