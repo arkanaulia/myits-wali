@@ -14,7 +14,7 @@ const HeaderProfile = () => {
       w="full"
       direction={{ base: "column", md: "row" }}
       gap="16px"
-      justifyContent={{ base: "", md: "space-between" }}
+      justifyContent={{ base: "", md: "" }}
     >
       <Flex alignItems="center">
         <Avatar size={avatarSize} name="avatar" src="/img/avatars/avatar.png" />
@@ -29,7 +29,7 @@ const HeaderProfile = () => {
         </VStack>
       </Flex>
 
-      <Flex
+      {/* <Flex
         direction="column"
         gap={{ md:"1" }}
         px={{ base: "0", md: "6" }}
@@ -46,7 +46,7 @@ const HeaderProfile = () => {
         <Text fontSize={{ base:'2xl',md:"3xl" }} fontWeight="500" color="red.500">
           Belum Lunas
         </Text>
-      </Flex>
+      </Flex> */}
     </Flex>
 
   );

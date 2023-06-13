@@ -3,7 +3,7 @@ import { Box, Flex, Text, VStack } from "@chakra-ui/react";
 import AdminLayout from "layouts/admin";
 import { Image } from "components/image/Image";
 import Card from "components/card/Card";
-import AbsensiComponent from "./components/AbsensiData";
+import PresensiComponent from "./components/PresensiData";
 import ProfileTab from "./components/Header";
 import Link from "next/link";
 export default function Presensi(props: { [x: string]: any }) {
@@ -60,7 +60,7 @@ export default function Presensi(props: { [x: string]: any }) {
               w="100%"
               {...rest}
             >
-              <AbsensiComponent />
+              <PresensiComponent />
             </Card>
 
             

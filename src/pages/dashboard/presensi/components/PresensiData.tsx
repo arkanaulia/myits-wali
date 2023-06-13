@@ -13,12 +13,12 @@ import {
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { motion } from "framer-motion";
 
-// Data dummy untuk daftar absensi
-const absensiData = [
+// Data dummy untuk daftar presensi
+const presensiData = [
   {
     id: 1,
     mataKuliah: "Grafika Komputer",
-    description: "Setiap Kamis",
+    description: "Kamis, 13.00 - 15.40",
     hadir: 1,
     tidakHadir: 1,
     keterangan: [
@@ -31,7 +31,7 @@ const absensiData = [
   {
     id: 3,
     mataKuliah: "Realitas Virtual dan Augmented Reality",
-    description: "Setiap Kamis",
+    description: "Kamis, 13.00 - 15.40 ",
     hadir: 1,
     tidakHadir: 1,
     keterangan: [
@@ -44,7 +44,7 @@ const absensiData = [
   {
     id: 2,
     mataKuliah: "Jaringan Komputer",
-    description: "Setiap Kamis",
+    description: "Kamis, 13.00 - 15.40 ",
     hadir: 1,
     tidakHadir: 1,
     keterangan: [
@@ -57,7 +57,7 @@ const absensiData = [
   // ...
 ];
 
-type Absensi = {
+type Presensi = {
   id: number;
   mataKuliah: string;
   description: string;
@@ -67,13 +67,13 @@ type Absensi = {
   semester: string;
 };
 
-const AbsensiComponent = () => {
+const PresensiComponent = () => {
   const [selectedSemester, setSelectedSemester] = useState<string>("");
 
   useEffect(() => {
-    // Cek apakah ada semester yang tersedia dalam data absensi
-    if (absensiData.length > 0) {
-      setSelectedSemester(absensiData[0].semester); // Set nilai default sebagai semester pertama
+    // Cek apakah ada semester yang tersedia dalam data presensi
+    if (presensiData.length > 0) {
+      setSelectedSemester(presensiData[0].semester); // Set nilai default sebagai semester pertama
     }
   }, []);
 
@@ -83,8 +83,8 @@ const AbsensiComponent = () => {
     setSelectedSemester(event.target.value);
   };
 
-  const filteredAbsensiData: Absensi[] = absensiData.filter(
-    (absensi) => absensi.semester === selectedSemester
+  const filteredPresensiData: Presensi[] = presensiData.filter(
+    (presensi) => presensi.semester === selectedSemester
   );
 
   const [isOpen, setIsOpen] = useState<{ [id: number]: boolean }>({});
@@ -104,7 +104,7 @@ const AbsensiComponent = () => {
           w={{ base: "28", md: "max-content" }}
           fontWeight="500"
         >
-          Detail Absensi
+          Detail Presensi
         </Text>
         <Box>
           <Select
@@ -124,15 +124,15 @@ const AbsensiComponent = () => {
       </Flex>
 
       <VStack align="stretch" spacing={{ base:'3', md:'1' }}>
-        {filteredAbsensiData.map((absensi) => (
+        {filteredPresensiData.map((presensi) => (
           <Box
-            key={absensi.id}
+            key={presensi.id}
             borderRadius="xl"
             transition="all 0.3s ease-in-out"
-            bg={isOpen[absensi.id] ? "blur" : ""}
-            backdropFilter={isOpen[absensi.id] ? "blur(10px)" : ""}
-            boxShadow={isOpen[absensi.id] ? "sm" : "sm"}
-            border={isOpen[absensi.id] ? "1px" : "1px"}
+            bg={isOpen[presensi.id] ? "blur" : ""}
+            backdropFilter={isOpen[presensi.id] ? "blur(10px)" : ""}
+            boxShadow={isOpen[presensi.id] ? "sm" : "sm"}
+            border={isOpen[presensi.id] ? "1px" : "1px"}
             borderColor="gray.200"
             w="full"
           >
@@ -141,7 +141,7 @@ const AbsensiComponent = () => {
               justify="space-between"
               cursor="pointer"
               direction={{ base: "column", md: "row" }}
-              onClick={() => handleToggle(absensi.id)}
+              onClick={() => handleToggle(presensi.id)}
               borderRadius="xl"
               py={{ base: "3", md: "4" }}
               px={{ base: "3", md: "4" }}
@@ -161,7 +161,7 @@ const AbsensiComponent = () => {
                   mr={{ base: "0", md: "8" }}
                   boxSize={8}
                   as={IoIosArrowDropdownCircle}
-                  transform={isOpen[absensi.id] ? "rotate(180deg)" : undefined}
+                  transform={isOpen[presensi.id] ? "rotate(180deg)" : undefined}
                   transition="transform 0.3s ease-in-out"
                 />
                 <Flex align="left" direction="column" gap={{ base:'1', md:'0' }} alignItems="center">
@@ -170,19 +170,18 @@ const AbsensiComponent = () => {
                     fontSize={{ base: "xl", md: "2xl" }}
                     fontWeight="500"
                   >
-                    {absensi.mataKuliah}
+                    {presensi.mataKuliah}
                   </Text>
                   <Text
                     w="full"
                     fontSize={{ base: "lg", md: "xl" }}
                     fontWeight="normal"
                   >
-                    {absensi.description}
+                    {presensi.description}
                   </Text>
                 </Flex>
               </Flex>
-              <Flex alignItems="center" direction="row">
-                <Flex align="center" direction="column">
+              <Flex align={{ base:'left',md:"center" }} w={{ base:'full', md:'max-content' }} direction="column">
                   <Text fontSize="md" fontWeight="500" color="green.500">
                     Kehadiran
                   </Text>
@@ -193,54 +192,91 @@ const AbsensiComponent = () => {
                     100%
                   </Text>
                 </Flex>
-                <Divider
-                  orientation="vertical"
-                  mx="4"
-                  borderColor="gray.400"
-                  h="50px"
-                />
-                <Flex align="center" direction="column">
-                  <Text fontSize="md" fontWeight="500" color="green.500">
-                    Hadir
-                  </Text>
-                  <Text
-                    fontSize={{ base: "xl", md: "2xl" }}
-                    fontWeight="500"
-                  >
-                    {absensi.hadir}
-                  </Text>
-                </Flex>
-                <Divider
-                  orientation="vertical"
-                  mx="4"
-                  borderColor="gray.400"
-                  h="50px"
-                />
-                <Flex align="center" direction="column">
-                  <Text fontSize="md" fontWeight="500" color="red.500">
-                    Absen
-                  </Text>
-                  <Text
-                    fontSize={{ base: "xl", md: "2xl" }}
-                    fontWeight="500"
-                  >
-                    {absensi.tidakHadir}
-                  </Text>
-                </Flex>
-              </Flex>
             </Flex>
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{
-                opacity: isOpen[absensi.id] ? 1 : 0,
-                height: isOpen[absensi.id] ? "auto" : 0,
+                opacity: isOpen[presensi.id] ? 1 : 0,
+                height: isOpen[presensi.id] ? "auto" : 0,
               }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
               style={{ overflow: "hidden" }}
             >
               <Box px={{ base:'4', md:'8' }} mb="6">
-                {absensi.keterangan.map((keterangan) => (
+              <Divider
+                  orientation="horizontal"
+                 
+                  borderColor="gray.300"
+                />
+              <Flex alignItems="center" gap={{ base:'0',md:'4' }} direction="row" w='full' my='4' justify={{ base:'center',md:'left' }}>
+                
+              
+                <Flex align="center" direction="column">
+                  <Text fontSize={{ base:'md',md:"lg" }} fontWeight="500" color="green.500">
+                    Hadir
+                  </Text>
+                  <Text
+                    fontSize={{ base: "xl", md: "2xl" }}
+                    fontWeight="500"
+                  >
+                    {presensi.hadir}
+                  </Text>
+                </Flex>
+                <Divider
+                  orientation="vertical"
+                  mx="4"
+                  borderColor="gray.400"
+                  h="50px"
+                />
+                <Flex align="center" direction="column">
+                  <Text fontSize={{ base:'md',md:"lg" }} fontWeight="500" color="yellow.500">
+                    Sakit
+                  </Text>
+                  <Text
+                    fontSize={{ base: "xl", md: "2xl" }}
+                    fontWeight="500"
+                  >
+                    {presensi.tidakHadir}
+                  </Text>
+                </Flex>
+                <Divider
+                  orientation="vertical"
+                  mx="4"
+                  borderColor="gray.400"
+                  h="50px"
+                />
+                <Flex align="center" direction="column">
+                  <Text fontSize={{ base:'md',md:"lg" }} fontWeight="500" color="blue.500">
+                    Izin
+                  </Text>
+                  <Text
+                    fontSize={{ base: "xl", md: "2xl" }}
+                    fontWeight="500"
+                  >
+                    {presensi.tidakHadir}
+                  </Text>
+                </Flex>
+                <Divider
+                  orientation="vertical"
+                  mx="4"
+                  borderColor="gray.400"
+                  h="50px"
+                />
+                <Flex align="center" direction="column">
+                  <Text fontSize={{ base:'md',md:"lg" }} fontWeight="500" color="red.500">
+                    Alpa
+                  </Text>
+                  <Text
+                    fontSize={{ base: "xl", md: "2xl" }}
+                    fontWeight="500"
+                  >
+                    {presensi.tidakHadir}
+                  </Text>
+                </Flex>
+                
+              </Flex>
+                {presensi.keterangan.map((keterangan) => (
                   <Box mb="4">
                     <Divider
                       mb="2"
@@ -251,7 +287,7 @@ const AbsensiComponent = () => {
                     <Flex
                       justify="space-between"
                       alignItems="center"
-                      key={absensi.id}
+                      key={presensi.id}
                     >
                       <Flex direction="column" mt="2" gap="1">
                         <Text w="full" fontSize={{ base:'lg',md:"xl" }} fontWeight="500">
@@ -303,4 +339,4 @@ const AbsensiComponent = () => {
   );
 };
 
-export default AbsensiComponent;
+export default PresensiComponent;

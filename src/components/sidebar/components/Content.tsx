@@ -51,12 +51,12 @@ const ProfileTab = () => {
     {
       name: "Arkan Aulia Farhan",
       src: "/img/avatars/avatar.png",
-      role: "Mahasiswa"
+      role: "Anak Wali"
     },
     {
       name: "John Doe",
       src: "/img/avatars/avatar6.png",
-      role: "Mahasiswa"
+      role: "Anak Wali"
     },
     // Add more children objects as needed
   ];
@@ -112,7 +112,7 @@ const ProfileTab = () => {
             }
             onClick={openModal}
           >
-            Ganti Anak Wali
+            Pilih Anak Wali
           </MenuItem>
           <MenuItem
             fontSize={{ base:'md',md:"lg" }}

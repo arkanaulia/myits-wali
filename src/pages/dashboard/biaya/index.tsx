@@ -1,10 +1,11 @@
-import { Box, Flex, Text, VStack, Divider } from "@chakra-ui/react";
+import { Box, Flex, Text, VStack } from "@chakra-ui/react";
 
 import AdminLayout from "layouts/admin";
 import { Image } from "components/image/Image";
 import Card from "components/card/Card";
 import ProfileTab from "./components/Header";
 import Link from "next/link";
+import BiayaData from "./components/BiayaData";
 export default function Presensi(props: { [x: string]: any }) {
   // Chakra Color Mode
   const { ...rest } = props;
@@ -59,54 +60,7 @@ export default function Presensi(props: { [x: string]: any }) {
               w="100%"
               {...rest}
             >
-               <Box w="100%" justifyContent="left">
-                <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="500">
-                  Detail Biaya
-                </Text>
-              </Box>
-              <Flex justifyContent="space-between" gap={{ base:'2', md:'' }} direction={{ base:'column', md:'row' }} alignItems={{ base:'left',md:"center" }} w="full">
-                <Flex alignItems="center" gap="6">
-                  <Box>
-                    <Text fontSize={{ base:'lg',md:"xl" }} color="gray.500" fontWeight="normal">
-                      Tagihan UKT
-                    </Text>
-                    <Text fontSize={{ base:'2xl',md:"3xl" }} color="red.600" fontWeight="500">
-                      Rp. 7.500.000,00
-                    </Text>
-                  </Box>
-                </Flex>
-                <Flex direction="column" alignItems={{ md:"end" }}>
-                  <Text fontSize={{ base:'lg',md:"xl" }} color="gray.500" fontWeight="normal">
-                    Batas Waktu Pembayaran
-                  </Text>
-                  <Text fontSize={{ base:'2xl',md:"3xl" }} fontWeight="500">
-                    25 Desember 2023
-                  </Text>
-                </Flex>
-              </Flex>
-
-              <Divider display={{ base:'block', md:'none' }} my="2" borderColor='gray.400' />
-
-              <Flex justifyContent="space-between" gap={{ base:'2', md:'' }} direction={{ base:'column', md:'row' }} alignItems={{ base:'left',md:"center" }} w="full">
-                <Flex alignItems="center" gap="6">
-                  <Box>
-                    <Text fontSize={{ base:'lg',md:"xl" }} color="gray.500" fontWeight="normal">
-                      Tagihan IKOMA
-                    </Text>
-                    <Text fontSize={{ base:'2xl',md:"3xl" }} color="green.500" fontWeight="500">
-                      Lunas
-                    </Text>
-                  </Box>
-                </Flex>
-                <Flex direction="column" alignItems={{ md:"end" }}>
-                  <Text fontSize={{ base:'lg',md:"xl" }} color="gray.500" fontWeight="normal">
-                    Batas Waktu Pembayaran
-                  </Text>
-                  <Text fontSize={{ base:'2xl',md:"3xl" }} fontWeight="500">
-                    -
-                  </Text>
-                </Flex>
-              </Flex>
+               <BiayaData /> 
             </Card>
 
             <Card

@@ -142,7 +142,7 @@ const ProfileTab = () => {
           gap="2"
         >
           <Text fontSize={{ base: "md", md: "lg" }} color="gray.500">
-            Apakah Anak Anda Lebih Dari 1?
+            Anak Anda Lebih Dari 1?
           </Text>
           <Button
             variant="outline"
