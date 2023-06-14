@@ -1,4 +1,4 @@
-import { Box, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import AdminLayout from "layouts/admin";
 import { Image } from "components/image/Image";
 import Card from "components/card/Card";
@@ -9,8 +9,6 @@ import { SearchBar } from "components/navbar/searchBar/SearchBar";
 export default function Presensi(props: { [x: string]: any }) {
   // Chakra Color Mode
   const { ...rest } = props;
-  const isMobile = useBreakpointValue({ base: true, md: false });
-  const buttonSize = useBreakpointValue({ base: "md", md: "lg" });
   const users = [
     {
       id: 1,

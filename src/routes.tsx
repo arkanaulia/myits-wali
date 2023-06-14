@@ -48,19 +48,19 @@ const routes: IRoute[] = [
     icon: <Image src='/img/icons/kelolawali.png' boxSize='6' />,
   },
   {
-    name: "Kelola Akun Wali (Admin)",
+    name: "Akun Wali",
     layout: "/admin",
     path: "/akun-wali",
     icon: <Image src='/img/icons/kelolawali.png' boxSize='6' />,
   },
   {
-    name: "Kelola Akun Mahasiswa (Admin)",
+    name: "Akun Mahasiswa",
     layout: "/admin",
     path: "/akun-mahasiswa",
     icon: <Image src='/img/icons/profil.png' boxSize='6' />,
   },
   {
-    name: "Kelola Banner (Admin)",
+    name: "Kelola Banner",
     layout: "/admin",
     path: "/banner",
     icon: <Image src='/img/icons/banner.png' boxSize='6' />,
