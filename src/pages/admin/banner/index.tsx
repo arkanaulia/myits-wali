@@ -81,7 +81,7 @@ export default function Presensi(props: { [x: string]: any }) {
             <FileUpload />
                 </Box>
             <Flex direction='column' w='full'>
-              <Text fontSize={{ sm: "md", md: "lg" }} fontWeight="500">Hyperlink</Text>
+              <Text fontSize={{ sm: "md", md: "lg" }} mb='1' fontWeight="500">Hyperlink</Text>
               <Input placeholder="Masukkan hyperlink disini..."></Input>
             </Flex>
             <Button

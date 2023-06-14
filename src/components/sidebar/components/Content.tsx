@@ -114,7 +114,7 @@ const ProfileTab = () => {
           >
             Pilih Anak Wali
           </MenuItem>
-          <Link href="/auth">
+          <Link href="/">
           <MenuItem
             fontSize={{ base:'md',md:"lg" }}
             icon={<Icon as={IoLogOut} boxSize="6" alignItems="center" />}

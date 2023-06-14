@@ -9,6 +9,12 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -17,14 +23,47 @@ import React from "react";
 import { MdArrowForwardIos, MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
 import Link from "next/link";
+import Carousel from "components/modal/CarouselModal";
 
 export default function Home(props: { [x: string]: any }) {
   const { ...rest } = props;
   const textColor = useColorModeValue("navy.700", "white");
   const textColorSecondary = "gray.400";
-  const textColorBrand = useColorModeValue("brand.500", "white");
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
+
+  const [showModal, setShowModal] = React.useState(false);
+  const closeModal = () => {
+    setShowModal(false);
+  };
+  const [showModalPass, setShowModalPass] = React.useState(false);
+  const closeModalPass = () => {
+    setShowModalPass(false);
+  };
+
+  const carouselSlides = [
+    {
+      title: "Slide 1",
+      image: "/img/tatacara/cara1.png",
+    },
+    {
+      title: "Slide 2",
+      image: "/img/tatacara/cara1.png",
+    },
+    {
+      title: "Slide 3",
+      image: "/img/tatacara/cara1.png",
+    },
+    {
+      title: "Slide 4",
+      image: "/img/tatacara/cara1.png",
+    },
+    {
+      title: "Slide 5",
+      image: "/img/tatacara/cara1.png",
+    },
+  ];
+
   return (
     <Box
       w="100%"
@@ -36,10 +75,10 @@ export default function Home(props: { [x: string]: any }) {
       <Flex
         w="100%"
         h="100%"
-        justifyContent={{ base:'left',md:"center" }}
+        justifyContent={{ base: "left", md: "center" }}
         gap={{ base: "4", md: "32" }}
         direction={{ base: "column", md: "row" }}
-        alignItems={{ base:'left',md:"center" }}
+        alignItems={{ base: "left", md: "center" }}
       >
         <Flex
           direction="column"
@@ -144,18 +183,49 @@ export default function Home(props: { [x: string]: any }) {
                 align="center"
                 mb={{ base: "20px", md: "24px" }}
               >
-                <Link href="/auth/forgot-password">
-                  <a>
-                    <Text
-                      color={textColorBrand}
-                      fontSize={{ base: "sm", md: "md" }}
-                      w="max-content"
-                      fontWeight="500"
-                    >
-                      Lupa password?
-                    </Text>
-                  </a>
-                </Link>
+                <Button
+                  color="gray.500"
+                  variant="link"
+                  fontSize={{ base: "sm", md: "md" }}
+                  w="max-content"
+                  fontWeight="500"
+                  cursor="pointer"
+                  transition="all 0.2s ease-in-out"
+                  _hover={{ color: "black" }}
+                  onClick={() => setShowModalPass(true)}
+                >
+                  Lupa password?
+                </Button>
+                <Modal
+                  isOpen={showModalPass}
+                  onClose={closeModalPass}
+                  size="xl"
+                  isCentered
+                >
+                  <ModalOverlay />
+                  <ModalContent>
+                    <ModalHeader>Lupa Password</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                      <Text fontSize="md" mb="1">Masukkan Email Terdaftar</Text>
+                      <Input placeholder="Masukkan email" />
+                      <Button
+                        fontSize={{ base: "md", md: "lg" }}
+                        rightIcon={<MdArrowForwardIos />}
+                        colorScheme="blue"
+                        fontWeight="500"
+                        variant="its"
+                        w="full"
+                        size="lg"
+                        rounded="lg"
+                        my='6'
+                        onClick={closeModalPass}
+                      >
+                        Reset Password
+                      </Button>
+                    </ModalBody>
+                  </ModalContent>
+                </Modal>
               </Flex>
               <Link href="/dashboard/beranda">
                 <Button
@@ -181,9 +251,26 @@ export default function Home(props: { [x: string]: any }) {
                 w="full"
                 size="lg"
                 rounded="lg"
+                onClick={() => setShowModal(true)}
               >
                 Lihat Panduan Pendaftaran
               </Button>
+
+              <Modal
+                isOpen={showModal}
+                onClose={closeModal}
+                size="2xl"
+                isCentered
+              >
+                <ModalOverlay />
+                <ModalContent>
+                  <ModalHeader>Tata Cara Pembuatan Akun</ModalHeader>
+                  <ModalCloseButton />
+                  <ModalBody>
+                    <Carousel slides={carouselSlides} closeModal={closeModal} />
+                  </ModalBody>
+                </ModalContent>
+              </Modal>
             </FormControl>
           </Card>
           <Card

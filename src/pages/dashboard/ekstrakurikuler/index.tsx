@@ -177,7 +177,7 @@ const Ekskul = (props: { [x: string]: any }) => {
               p={{ base: "24px", md: "32px" }}
               alignItems="center"
               flexDirection="column"
-              gap={{ base: "16px", md: "24px" }}
+              gap='0'
               backgroundImage="url('/img/dashboards/pattern.svg')"
               backgroundRepeat="repeat-y"
               backgroundPosition="center"
@@ -203,7 +203,7 @@ const Ekskul = (props: { [x: string]: any }) => {
               p={{ base: "24px", md: "32px" }}
               alignItems="center"
               flexDirection="column"
-              gap={{ base: "16px", md: "24px" }}
+              gap='0'
               backgroundImage="url('/img/dashboards/pattern.svg')"
               backgroundRepeat="repeat-y"
               backgroundPosition="center"
@@ -220,7 +220,7 @@ const Ekskul = (props: { [x: string]: any }) => {
                   Kompetisi
                 </Text>
               </Box>
-              <Box mt='-2' w='full'>
+              <Box  w='full'>
                 <EkskulList data={data2} />
               </Box>
             </Card>
