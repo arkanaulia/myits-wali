@@ -28,19 +28,6 @@ const BannerCarousel = () => {
     );
   };
 
-  const handleHyperlinkChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const { value } = event.target;
-    setBanners((prevBanners) => {
-      const updatedBanners = [...prevBanners];
-      updatedBanners[activeBannerIndex] = {
-        ...updatedBanners[activeBannerIndex],
-        hyperlink: value,
-      };
-      return updatedBanners;
-    });
-  };
 
   const handleDeleteBanner = () => {
     setBanners((prevBanners) => {
