@@ -41,6 +41,30 @@ const routes: IRoute[] = [
     path: "/biaya",
     icon: <Image src='/img/icons/biaya.png' boxSize='6' />,
   },
+  {
+    name: "Kelola Akun Wali",
+    layout: "/dashboard",
+    path: "/kelola-wali",
+    icon: <Image src='/img/icons/kelolawali.png' boxSize='6' />,
+  },
+  {
+    name: "Kelola Akun Wali (Admin)",
+    layout: "/admin",
+    path: "/akun-wali",
+    icon: <Image src='/img/icons/kelolawali.png' boxSize='6' />,
+  },
+  {
+    name: "Kelola Akun Mahasiswa (Admin)",
+    layout: "/admin",
+    path: "/akun-mahasiswa",
+    icon: <Image src='/img/icons/profil.png' boxSize='6' />,
+  },
+  {
+    name: "Kelola Banner (Admin)",
+    layout: "/admin",
+    path: "/banner",
+    icon: <Image src='/img/icons/banner.png' boxSize='6' />,
+  },
 ];
 
 export default routes;

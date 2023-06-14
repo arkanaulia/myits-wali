@@ -40,6 +40,19 @@ export const buttonStyles = {
             bg: mode("biru.600", "biru.400")(props),
           },
         }),
+        itsdark: (props: StyleFunctionProps) => ({
+          bg: mode("biru.700", "biru.400")(props),
+          color: "white",
+          _focus: {
+            bg: mode("biru.700", "biru.400")(props),
+          },
+          _active: {
+            bg: mode("biru.700", "biru.400")(props),
+          },
+          _hover: {
+            bg: mode("biru.800", "biru.400")(props),
+          },
+        }),
         darkBrand: (props: StyleFunctionProps) => ({
           bg: mode("brand.900", "brand.400")(props),
           color: "white",

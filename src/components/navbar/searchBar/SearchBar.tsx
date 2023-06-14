@@ -21,12 +21,13 @@ export function SearchBar (props: {
   } = props
   // Chakra Color Mode
   const searchIconColor = useColorModeValue('gray.700', 'white')
-  const inputBg = useColorModeValue('secondaryGray.300', 'navy.900')
+  const inputBg = useColorModeValue('white', 'navy.900')
   const inputText = useColorModeValue('gray.700', 'gray.100')
   return (
-    <InputGroup w={{ base: '100%', md: '200px' }} {...rest}>
-      <InputLeftElement>
+    <InputGroup w={{ base: '100%' }} display='flex' alignItems='center' h='50px' {...rest}>
+      <InputLeftElement h='full'>
         <IconButton
+        h='full'
           aria-label='search'
           bg='inherit'
           borderRadius='inherit'
@@ -43,12 +44,15 @@ export function SearchBar (props: {
       </InputLeftElement>
 
       <Input
-        fontSize='sm'
+        fontSize='md'
         bg={background ? background : inputBg}
         color={inputText}
         fontWeight='500'
+        borderColor='gray.400'
+        w='full'
+        h='full'
         _placeholder={{ color: 'gray.400', fontSize: '14px' }}
-        borderRadius={borderRadius ? borderRadius : '30px'}
+        borderRadius='xl'
         placeholder={placeholder ? placeholder : 'Search...'}
       />
     </InputGroup>

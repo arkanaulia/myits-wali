@@ -29,11 +29,11 @@ const ChildModal = ({
   closeModal,
 }: ChildModalProps) => {
   return (
-    <Modal isCentered isOpen={isModalOpen} onClose={closeModal} size="lg">
+    <Modal isCentered isOpen={isModalOpen} onClose={closeModal} size="md">
       <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(5px)" />
       <ModalOverlay />
-      <ModalContent p="24px">
-        <ModalHeader>Pilih Anak Wali</ModalHeader>
+      <ModalContent py="20px">
+        <ModalHeader fontSize='2xl'>Pilih Anak Wali</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <VStack spacing="4">
