@@ -5,26 +5,28 @@ import Card from "components/card/Card";
 import DataTable from "./components/dataAkunMhs";
 import { SearchBar } from "components/navbar/searchBar/SearchBar";
 
-
 export default function Presensi(props: { [x: string]: any }) {
   // Chakra Color Mode
   const { ...rest } = props;
   const users = [
     {
       id: 1,
-      nama: "John Doe",
+      nama: "John Doe aduwifeiuwebfiuwbeifubfcsweeeeeeeffffffffffffffffffffffwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
       nrp: "0511940000128",
-      status: "Sudah Mendaftar",
+      status: "Sudah",
+      namaOrangTua: "Budi Santoso",
+      namaAnakWali: "John Doe",
+      noHandphone: "086153767548",
+      email: "budisantoso@email.com",
     },
     {
       id: 2,
       nama: "John Doe",
       nrp: "0511940000128",
-      status: "Sudah Mendaftar",
+      status: "Belum",
     },
     // Daftar pengguna lainnya...
   ];
-
 
   return (
     <AdminLayout>
@@ -63,10 +65,9 @@ export default function Presensi(props: { [x: string]: any }) {
                 <Text fontSize={{ sm: "xl", md: "3xl" }} fontWeight="500">
                   Daftar Akun Mahasiswa
                 </Text>
-              
               </Flex>
               <SearchBar />
-              <DataTable users={users} />   
+              <DataTable users={users} />
             </Card>
           </Flex>
         </>
