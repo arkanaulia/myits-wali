@@ -65,45 +65,42 @@ export default function Home(props: { [x: string]: any }) {
   ];
 
   return (
-    <Box
-      w="100%"
-      h={{ base: "", md: "100vh" }}
-      p="6"
-      bgColor="white"
-      backgroundImage="url('/img/dashboards/pattern.svg')"
-    >
+    < >
       <Flex
         w="100%"
-        h="100%"
+        p='10'
+        minH={'100vh'}
         justifyContent={{ base: "left", md: "center" }}
         gap={{ base: "4", md: "32" }}
         direction={{ base: "column", md: "row" }}
         alignItems={{ base: "left", md: "center" }}
+        backgroundImage="url('/img/dashboards/pattern.svg')"
       >
         <Flex
           direction="column"
           maxW={{ base: "full", md: "30vw" }}
           alignItems={{ base: "center", md: "flex-start" }}
-          pb={{ base: "0", md: "32" }}
+          pb={{ base: "0", md: "48" }}
         >
           <Image
             src="/img/icons/logohome.png"
             h="auto"
             w={{ base: "180px", md: "200px" }}
           />
-          <Box display={{ base: "none", md: "block" }}>
-            <Text fontSize={{ base: "2xl", md: "5xl" }}>Selamat Datang di</Text>
+          <Box display={{ base: "none", md: "block" }} w='600px'>
+            <Text fontSize={{ base: "2xl", md: "4xl" }}>Selamat Datang di</Text>
             <Text
-              fontSize={{ base: "2xl", md: "5xl" }}
+              fontSize={{ base: "2xl", md: "4xl" }}
               fontWeight="600"
-              mt={{ base: "-1", md: "-4" }}
+              mt={{ base: "-1", md: "-2" }}
             >
               myITS Wali
             </Text>
           </Box>
           <Text
-            fontSize={{ base: "md", md: "2xl" }}
+            fontSize={{ base: "md", md: "xl" }}
             align={{ base: "center", md: "left" }}
+            w='400px'
             maxW={{ base: "70vw", md: "" }}
             fontWeight="400"
             mt={{ base: "", md: "2" }}
@@ -111,7 +108,7 @@ export default function Home(props: { [x: string]: any }) {
             Monitor perkembangan kuliah anak dengan aplikasi myITS Wali
           </Text>
         </Flex>
-        <Flex direction="column" gap={{ base: "4", md: "6" }}>
+        <Flex direction="column" h='full' gap={{ base: "4", md: "6" }}>
           {" "}
           <Card
             boxShadow="lg"
@@ -119,7 +116,7 @@ export default function Home(props: { [x: string]: any }) {
             alignItems="center"
             flexDirection="column"
             gap={{ base: "16px", md: "24px" }}
-            w={{ base: "full", md: "28vw" }}
+            w={{ base: "full", md: "40vw" }}
             {...rest}
           >
             <Flex w="full" alignItems="center">
@@ -252,6 +249,7 @@ export default function Home(props: { [x: string]: any }) {
                 size="lg"
                 rounded="lg"
                 onClick={() => setShowModal(true)}
+                noOfLines={1}
               >
                 Lihat Panduan Pendaftaran
               </Button>
@@ -279,7 +277,7 @@ export default function Home(props: { [x: string]: any }) {
             alignItems="center"
             flexDirection="column"
             gap={{ base: "16px", md: "24px" }}
-            w={{ base: "full", md: "28vw" }}
+            maxW={{ base: "full", md: "40vw" }}
             {...rest}
           >
             <Flex w="full" alignItems="center">
@@ -301,6 +299,6 @@ export default function Home(props: { [x: string]: any }) {
           </Card>
         </Flex>
       </Flex>
-    </Box>
+      </>
   );
 }
