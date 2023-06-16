@@ -87,7 +87,7 @@ const DataTable = ({ users }: Props) => {
                         user.status === "Sudah" ? "green.100" : "red.100"
                       }
                     >
-                      {user.status} Punya Akun Wali
+                      {user.status}
                     </Box>
                   </Td>
                   <Td>
