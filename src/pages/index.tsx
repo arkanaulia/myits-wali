@@ -68,7 +68,7 @@ export default function Home(props: { [x: string]: any }) {
     <>
       <Flex
         w="100%"
-        p='10'
+        p={{ base:'6',md:'10' }}
         minH={'100vh'}
         justifyContent={{ base: "left", md: "center" }}
         gap={{ base: "4", md: "32" }}
@@ -249,7 +249,6 @@ export default function Home(props: { [x: string]: any }) {
                 size="lg"
                 rounded="lg"
                 onClick={() => setShowModal(true)}
-                noOfLines={1}
               >
                 Lihat Panduan Pendaftaran
               </Button>
