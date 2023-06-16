@@ -71,7 +71,7 @@ export default function Home(props: { [x: string]: any }) {
         p={{ base:'6',md:'10' }}
         minH={'100vh'}
         justifyContent={{ base: "left", md: "center" }}
-        gap={{ base: "4", md: "32" }}
+        gap={{ base: "4", md: "24" }}
         direction={{ base: "column", md: "row" }}
         alignItems={{ base: "left", md: "center" }}
         backgroundImage="url('/img/dashboards/pattern.svg')"
@@ -116,7 +116,7 @@ export default function Home(props: { [x: string]: any }) {
             alignItems="center"
             flexDirection="column"
             gap={{ base: "16px", md: "24px" }}
-            w={{ base: "full", md: "40vw" }}
+            w={{ base: "full", md: "32rem" }}
             {...rest}
           >
             <Flex w="full" alignItems="center">
@@ -276,7 +276,7 @@ export default function Home(props: { [x: string]: any }) {
             alignItems="center"
             flexDirection="column"
             gap={{ base: "16px", md: "24px" }}
-            maxW={{ base: "full", md: "40vw" }}
+            maxW={{ base: "full", md: "32rem" }}
             {...rest}
           >
             <Flex w="full" alignItems="center">
