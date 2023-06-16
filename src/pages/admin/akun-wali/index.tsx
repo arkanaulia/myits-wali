@@ -37,6 +37,9 @@ export default function Presensi(props: { [x: string]: any }) {
       username: "johndoe",
       password: "s3cr3tpass",
       createdAt: "2023-06-01",
+      namaAnakWali: "Arkan Aulia Farhan",
+      noHandphone: "081635747382",
+      jurusan: "Teknik Informatika 2019"
     },
     {
       id: 2,

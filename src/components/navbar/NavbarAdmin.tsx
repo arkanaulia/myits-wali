@@ -2,6 +2,7 @@
 import { Box, Flex } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 import { SidebarResponsive } from "components/sidebar/Sidebar";
+import Link from "next/link";
 import routes from "routes";
 
 export default function AdminNavbar(props: {
@@ -59,18 +60,23 @@ export default function AdminNavbar(props: {
     >
       <Flex
         w="100%"
-        flexDirection='row'
+        flexDirection="row"
         alignItems="center"
-        justify='space-between'
+        justify="space-between"
         mb={gap}
       >
         <SidebarResponsive routes={routes} />
-        <Box mx={{sm:'0px', md:'40px'}} >
-          <Image src="/img/dashboards/logoo.png" height="24px" width="auto" />
+        <Box mx={{ sm: "0px", md: "40px" }}>
+          <Link href='/dashboard/beranda'>
+            <Image
+              src="/img/dashboards/logoo.png"
+              height="24px"
+              width="auto"
+              cursor="pointer"
+            />
+          </Link>
         </Box>
-        <Box  w='40px'>
-        </Box>
-        
+        <Box w="40px"></Box>
       </Flex>
     </Box>
   );

@@ -65,7 +65,7 @@ export default function Home(props: { [x: string]: any }) {
   ];
 
   return (
-    < >
+    <>
       <Flex
         w="100%"
         p='10'

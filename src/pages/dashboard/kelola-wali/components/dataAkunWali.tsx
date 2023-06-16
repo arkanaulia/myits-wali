@@ -10,8 +10,18 @@ import {
   TableContainer,
   useBreakpointValue,
   Flex,
+  Input,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
+  Text,
 } from "@chakra-ui/react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import { MdArrowForwardIos } from "react-icons/md";
+import React from "react";
 
 interface User {
   id: number;
@@ -20,7 +30,7 @@ interface User {
   username?: string;
   password?: string;
   createdAt?: string;
-  status ?: string; 
+  status?: string;
 }
 
 interface Props {
@@ -39,6 +49,11 @@ const DataTable = ({ users }: Props) => {
     } else {
       setVisiblePasswordId(id);
     }
+  };
+
+  const [showModalPass, setShowModalPass] = React.useState(false);
+  const closeModalPass = () => {
+    setShowModalPass(false);
   };
 
   return (
@@ -61,8 +76,18 @@ const DataTable = ({ users }: Props) => {
               <Tr key={user.id}>
                 <Td>{user.id}</Td>
                 <Td>{user.namaWali}</Td>
-                <Flex bgColor='biru.100' color='biru.500' rounded='lg' w='full' align='center' display={user.status == null ? "none" : "block"}>
-                  <Td fontWeight='500' w='max-content'> {user.status}</Td>
+                <Flex
+                  bgColor="biru.100"
+                  color="biru.500"
+                  rounded="lg"
+                  w="full"
+                  align="center"
+                  display={user.status == null ? "none" : "block"}
+                >
+                  <Td fontWeight="500" w="max-content">
+                    {" "}
+                    {user.status}
+                  </Td>
                 </Flex>
                 <Td>{user.email}</Td>
                 <Td>{user.username}</Td>
@@ -82,16 +107,47 @@ const DataTable = ({ users }: Props) => {
                 </Td>
                 <Td>{user.createdAt}</Td>
                 <Td>
-                  <a href={`/reset-password/${user.id}`}>
-                    <Button
-                      display={user.password == null ? "none" : "block"}
-                      size={isMobile ? "sm" : "md"}
-                      variant="link"
-                      colorScheme="dark"
-                    >
-                      Reset Password
-                    </Button>
-                  </a>
+                  <Button
+                    display={user.password == null ? "none" : "block"}
+                    size={isMobile ? "sm" : "md"}
+                    variant="link"
+                    colorScheme="dark"
+                    onClick={() => setShowModalPass(true)}
+                  >
+                    Reset Password
+                  </Button>
+                  <Modal
+                    isOpen={showModalPass}
+                    onClose={closeModalPass}
+                    size="xl"
+                    isCentered
+                  >
+                    <ModalOverlay />
+                    <ModalContent>
+                      <ModalHeader>Lupa Password</ModalHeader>
+                      <ModalCloseButton />
+                      <ModalBody>
+                        <Text fontSize="md" mb="1">
+                          Masukkan Email Terdaftar
+                        </Text>
+                        <Input placeholder="Masukkan email" />
+                        <Button
+                          fontSize={{ base: "md", md: "lg" }}
+                          rightIcon={<MdArrowForwardIos />}
+                          colorScheme="blue"
+                          fontWeight="500"
+                          variant="its"
+                          w="full"
+                          size="lg"
+                          rounded="lg"
+                          my="6"
+                          onClick={closeModalPass}
+                        >
+                          Reset Password
+                        </Button>
+                      </ModalBody>
+                    </ModalContent>
+                  </Modal>
                 </Td>
               </Tr>
             ))}

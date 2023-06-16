@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Table,
   Tbody,
@@ -10,17 +9,30 @@ import {
   TableContainer,
   useBreakpointValue,
   Flex,
+  Box,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Text,
 } from "@chakra-ui/react";
-import { FiEye, FiEyeOff } from "react-icons/fi";
+import { ReactNode, useState } from "react";
+import { CgUnavailable } from "react-icons/cg";
 
 interface User {
+  namaAnakWali?: ReactNode;
+  noHandphone?: ReactNode;
   id: number;
   namaWali: string;
   email?: string;
   username?: string;
   password?: string;
   createdAt?: string;
-  status ?: string; 
+  status?: string;
+  jurusan?: string;
 }
 
 interface Props {
@@ -28,17 +40,20 @@ interface Props {
 }
 
 const DataTable = ({ users }: Props) => {
-  const [visiblePasswordId, setVisiblePasswordId] = useState<number | null>(
-    null
-  );
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const isMobile = useBreakpointValue({ base: true, md: false });
 
-  const togglePasswordVisibility = (id: number) => {
-    if (visiblePasswordId === id) {
-      setVisiblePasswordId(null);
-    } else {
-      setVisiblePasswordId(id);
-    }
+  const openModal = (user: User) => {
+    setSelectedUser(user);
+  };
+
+  const closeModal = () => {
+    setSelectedUser(null);
+  };
+
+  const deleteUser = (userId: number) => {
+    // Perform deletion logic here
+    console.log(`Deleting user with ID: ${userId}`);
   };
 
   return (
@@ -50,9 +65,8 @@ const DataTable = ({ users }: Props) => {
             <Th>Nama Wali</Th>
             <Th>Email</Th>
             <Th>Username</Th>
-            <Th>Password</Th>
             <Th>Tanggal Dibuat</Th>
-            <Th>Reset Password</Th>
+            <Th>Akun Wali</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -61,37 +75,129 @@ const DataTable = ({ users }: Props) => {
               <Tr key={user.id}>
                 <Td>{user.id}</Td>
                 <Td>{user.namaWali}</Td>
-                <Flex bgColor='biru.100' color='biru.500' rounded='lg' w='full' align='center' display={user.status == null ? "none" : "block"}>
-                  <Td fontWeight='500' w='max-content'> {user.status}</Td>
+                <Flex
+                  bgColor="biru.100"
+                  color="biru.500"
+                  rounded="lg"
+                  w="full"
+                  align="center"
+                  display={user.status == null ? "none" : "block"}
+                >
+                  <Td fontWeight="500" w="max-content">
+                    {" "}
+                    {user.status}
+                  </Td>
                 </Flex>
                 <Td>{user.email}</Td>
                 <Td>{user.username}</Td>
+                <Td>{user.createdAt}</Td>
                 <Td>
                   <Button
                     display={user.password == null ? "none" : "block"}
-                    variant="link"
                     size={isMobile ? "sm" : "md"}
+                    variant="link"
                     colorScheme="dark"
-                    rightIcon={
-                      visiblePasswordId === user.id ? <FiEyeOff /> : <FiEye />
-                    }
-                    onClick={() => togglePasswordVisibility(user.id)}
+                    onClick={() => openModal(user)}
                   >
-                    {visiblePasswordId === user.id ? user.password : "******"}
+                    Lihat Akun
                   </Button>
-                </Td>
-                <Td>{user.createdAt}</Td>
-                <Td>
-                  <a href={`/reset-password/${user.id}`}>
-                    <Button
-                      display={user.password == null ? "none" : "block"}
-                      size={isMobile ? "sm" : "md"}
-                      variant="link"
-                      colorScheme="dark"
-                    >
-                      Reset Password
-                    </Button>
-                  </a>
+                  <Modal
+                    isCentered
+                    isOpen={selectedUser !== null}
+                    onClose={closeModal}
+                    size="xl"
+                  >
+                    <ModalOverlay />
+                    <ModalContent>
+                      <ModalHeader>Informasi Wali</ModalHeader>
+                      <ModalCloseButton />
+                      {selectedUser && (
+                        <ModalBody>
+                          <Box mb={4}>
+                            <Text mb="1">Nama Orang Tua</Text>{" "}
+                            <Box
+                              p="2"
+                              bgColor="gray.100"
+                              rounded="md"
+                              border="1px"
+                              color="gray.800"
+                              fontWeight='500'
+                              borderColor="gray.300"
+                            >
+                              {selectedUser.namaWali}
+                            </Box>
+                          </Box>
+                          <Box mb={4}>
+                            <Text mb="1">Nama Anak Wali</Text>{" "}
+                            <Box
+                              p="2"
+                              bgColor="gray.100"
+                              rounded="md"
+                              border="1px"
+                              color="gray.800"
+                              fontWeight='500'
+                              borderColor="gray.300"
+                            >
+                              {selectedUser.namaAnakWali}
+                            </Box>
+                          </Box>
+                          <Box mb={4}>
+                            <Text mb="1">Jurusan Anak Wali</Text>{" "}
+                            <Box
+                              p="2"
+                              bgColor="gray.100"
+                              rounded="md"
+                              border="1px"
+                              color="gray.800"
+                              fontWeight='500'
+                              borderColor="gray.300"
+                            >
+                              {selectedUser.jurusan}
+                            </Box>
+                          </Box>
+                          <Box mb={4}>
+                            <Text mb="1">No Handphone</Text>{" "}
+                            <Box
+                              p="2"
+                              bgColor="gray.100"
+                              rounded="md"
+                              border="1px"
+                              color="gray.800"
+                              fontWeight='500'
+                              borderColor="gray.300"
+                            >
+                              {selectedUser.noHandphone}
+                            </Box>
+                          </Box>
+                          <Box mb={0}>
+                            <Text mb="1">Email</Text>{" "}
+                            <Box
+                              p="2"
+                              bgColor="gray.100"
+                              rounded="md"
+                              border="1px"
+                              color="gray.800"
+                              fontWeight='500'
+                              borderColor="gray.300"
+                            >
+                              {selectedUser.email}
+                            </Box>
+                          </Box>
+                        </ModalBody>
+                      )}
+                      <ModalFooter>
+                        <Button
+                          colorScheme="red"
+                          rounded="lg"
+                          onClick={() => deleteUser(selectedUser?.id)}
+                          rightIcon={<CgUnavailable />}
+                          mb="2"
+                        >
+                          Nonaktifkan
+                        </Button>
+                      </ModalFooter>
+                    </ModalContent>
+                  </Modal>
                 </Td>
               </Tr>
             ))}

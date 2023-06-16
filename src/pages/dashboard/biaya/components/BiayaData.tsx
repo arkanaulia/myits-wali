@@ -18,7 +18,7 @@ const biayaData = [
     tagihan: "Tagihan IKOMA",
     value: "Rp.500.000,00",
     status: "Lunas",
-    description: "20 December 2023",
+    description: "20 Desember 2023",
     semester: "semester1",
     keterangan: "Tanggal Pelunasan"
   },
