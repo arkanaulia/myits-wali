@@ -91,7 +91,7 @@ export default function Home(props: { [x: string]: any }) {
         p={{ base: "6", md: "10" }}
         minH={"100vh"}
         justifyContent={{ base: "left", md: "center" }}
-        gap={{ base: "4", md: "24" }}
+        gap={{ base: "4", md: "12" }}
         direction={{ base: "column", md: "row" }}
         alignItems={{ base: "left", md: "center" }}
         backgroundImage="url('/img/dashboards/pattern.svg')"
@@ -105,7 +105,7 @@ export default function Home(props: { [x: string]: any }) {
           <Image
             src="/img/icons/logohome.png"
             h="auto"
-            w={{ base: "180px", md: "200px" }}
+            w={{ base: "180px", md: "150px" }}
           />
           <Box display={{ base: "none", md: "block" }} w="600px">
             <Text fontSize={{ base: "2xl", md: "4xl" }}>Selamat Datang di</Text>
