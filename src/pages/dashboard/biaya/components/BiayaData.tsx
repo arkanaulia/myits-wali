@@ -11,7 +11,7 @@ const biayaData = [
     status: "Belum Lunas",
     description: "25 Desember 2023",
     semester: "semester1",
-    keterangan: "Batas Waktu Pembayaran"
+    keterangan: "Batas Waktu Pembayaran",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const biayaData = [
     status: "Lunas",
     description: "20 Desember 2023",
     semester: "semester1",
-    keterangan: "Tanggal Pelunasan"
+    keterangan: "Tanggal Pelunasan",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const biayaData = [
     status: "Belum Lunas",
     description: "25 Desember 2023",
     semester: "semester2",
-    keterangan: "Batas Waktu Pembayaran"
+    keterangan: "Batas Waktu Pembayaran",
   },
   // ...
 ];
@@ -91,62 +91,77 @@ const PresensiComponent = () => {
         </Box>
       </Flex>
 
-        {filteredBiayaData.map((biaya) => (
-          <Box
-            key={biaya.id}
-            borderRadius="xl"
-            transition="all 0.3s ease-in-out"
-            borderColor="gray.200"
+      {filteredBiayaData.map((biaya) => (
+        <Box
+          key={biaya.id}
+          borderRadius="xl"
+          transition="all 0.3s ease-in-out"
+          borderColor="gray.200"
+          w="full"
+        >
+          <Flex
+            justifyContent="space-between"
+            gap={{ base: "2", md: "" }}
+            direction={{ base: "column", md: "row" }}
+            alignItems={{ base: "left", md: "center" }}
             w="full"
+            mt="4"
           >
-            <Flex
-              justifyContent="space-between"
-              gap={{ base: "2", md: "" }}
-              direction={{ base: "column", md: "row" }}
-              alignItems={{ base: "left", md: "center" }}
-              w="full"
-              mt='4'
-            >
-              <Flex alignItems="center" gap="6">
-                <Box>
-                  <Text
-                    fontSize={{ base: "lg", md: "xl" }}
-                    color="gray.500"
-                    fontWeight="normal"
-                  >
-                    {biaya.tagihan}
-                  </Text>
-                  <Text
-                    fontSize={{ base: "2xl", md: "3xl" }}
-                    
-                    fontWeight="500"
-                  >
-                   {biaya.value}
-                  </Text>
-                </Box>
-              </Flex>
-              <Flex direction="column" alignItems={{ md: "end" }}>
+            <Flex alignItems="center" gap="6">
+              <Box>
                 <Text
                   fontSize={{ base: "lg", md: "xl" }}
                   color="gray.500"
                   fontWeight="normal"
                 >
-                  {biaya.keterangan}
+                  {biaya.tagihan}
                 </Text>
-                <Text fontSize={{ base: "2xl", md: "3xl" }} color={biaya.status == 'Lunas' ? "green.500" : "red.500"} fontWeight="500">
-                {biaya.description}
-                </Text>
-              </Flex>
-
-              <Divider
-                display={{ base: "block", md: "none" }}
-                my="2"
-                borderColor="gray.400"
-              />
-
+                <Flex gap={{ base:'1',md:'4' }} alignItems={{ base:'left',md:'center' }} direction={{ base:'column', md:'row' }}>
+                  <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="500">
+                    {biaya.value}
+                  </Text>
+                  <Text
+                  // display={biaya.status == "Lunas" ? "none" : "block"}
+                    px="2"
+                    py='1'
+                    h='max-content'
+                    bgColor={biaya.status == "Lunas" ? "green.100" : "red.100"}
+                    fontSize={{ base: "md", md: "lg" }}
+                    color={biaya.status == "Lunas" ? "green.500" : "red.500"}
+                    fontWeight="500"
+                    rounded='lg'
+                    w='max-content'
+                  >
+                    {biaya.status}
+                  </Text>
+                </Flex>
+              </Box>
             </Flex>
-          </Box>
-        ))}
+            <Flex direction="column" alignItems={{ md: "end" }}>
+              <Text
+                fontSize={{ base: "lg", md: "xl" }}
+                color="gray.500"
+                fontWeight="normal"
+              >
+                {biaya.keterangan}
+              </Text>
+              <Text
+                fontSize={{ base: "2xl", md: "3xl" }}
+                color={biaya.status == "Lunas" ? "green.500" : "red.500"}
+                fontWeight="500"
+              >
+                {biaya.description}
+              </Text>
+            </Flex>
+
+            <Divider
+              display={{ base: "block", md: "none" }}
+              my="2"
+              borderColor="gray.400"
+            />
+          </Flex>
+        </Box>
+      ))}
     </Box>
   );
 };
