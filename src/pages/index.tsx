@@ -1,4 +1,9 @@
 import {
+  AlertDialog,
+  AlertDialogBody,
+  AlertDialogContent,
+  AlertDialogFooter,
+  AlertDialogOverlay,
   Box,
   Button,
   Flex,
@@ -19,7 +24,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import Card from "components/card/Card";
-import React from "react";
+import React, { useState } from "react";
 import { MdArrowForwardIos, MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
 import Link from "next/link";
@@ -39,6 +44,21 @@ export default function Home(props: { [x: string]: any }) {
   const [showModalPass, setShowModalPass] = React.useState(false);
   const closeModalPass = () => {
     setShowModalPass(false);
+  };
+
+  const [showAlertDialog, setShowAlertDialog] = useState(false);
+
+  const resetPassword = () => {
+    // Perform password reset logic here
+
+    // Show the alert dialog
+    setShowAlertDialog(true);
+    // Close the modal
+    closeModalPass();
+  };
+
+  const closeAlertDialog = () => {
+    setShowAlertDialog(false);
   };
 
   const carouselSlides = [
@@ -68,8 +88,8 @@ export default function Home(props: { [x: string]: any }) {
     <>
       <Flex
         w="100%"
-        p={{ base:'6',md:'10' }}
-        minH={'100vh'}
+        p={{ base: "6", md: "10" }}
+        minH={"100vh"}
         justifyContent={{ base: "left", md: "center" }}
         gap={{ base: "4", md: "24" }}
         direction={{ base: "column", md: "row" }}
@@ -87,7 +107,7 @@ export default function Home(props: { [x: string]: any }) {
             h="auto"
             w={{ base: "180px", md: "200px" }}
           />
-          <Box display={{ base: "none", md: "block" }} w='600px'>
+          <Box display={{ base: "none", md: "block" }} w="600px">
             <Text fontSize={{ base: "2xl", md: "4xl" }}>Selamat Datang di</Text>
             <Text
               fontSize={{ base: "2xl", md: "4xl" }}
@@ -100,7 +120,7 @@ export default function Home(props: { [x: string]: any }) {
           <Text
             fontSize={{ base: "md", md: "xl" }}
             align={{ base: "center", md: "left" }}
-            w='400px'
+            w="400px"
             maxW={{ base: "70vw", md: "" }}
             fontWeight="400"
             mt={{ base: "", md: "2" }}
@@ -108,7 +128,7 @@ export default function Home(props: { [x: string]: any }) {
             Monitor perkembangan kuliah anak dengan aplikasi myITS Wali
           </Text>
         </Flex>
-        <Flex direction="column" h='full' gap={{ base: "4", md: "6" }}>
+        <Flex direction="column" h="full" gap={{ base: "4", md: "6" }}>
           {" "}
           <Card
             boxShadow="lg"
@@ -204,7 +224,9 @@ export default function Home(props: { [x: string]: any }) {
                     <ModalHeader>Lupa Password</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
-                      <Text fontSize="md" mb="1">Masukkan Email Terdaftar</Text>
+                      <Text fontSize="md" mb="1">
+                        Masukkan Email Terdaftar
+                      </Text>
                       <Input placeholder="Masukkan email" />
                       <Button
                         fontSize={{ base: "md", md: "lg" }}
@@ -215,14 +237,67 @@ export default function Home(props: { [x: string]: any }) {
                         w="full"
                         size="lg"
                         rounded="lg"
-                        my='6'
-                        onClick={closeModalPass}
+                        my="6"
+                        onClick={resetPassword}
                       >
                         Reset Password
                       </Button>
                     </ModalBody>
                   </ModalContent>
                 </Modal>
+
+                <AlertDialog
+                  isOpen={showAlertDialog}
+                  onClose={closeAlertDialog}
+                  isCentered
+                  leastDestructiveRef={undefined}
+                >
+                  <AlertDialogOverlay />
+                  <AlertDialogContent rounded="xl" py="2">
+                    <AlertDialogBody
+                      display="flex"
+                      flexDirection="column"
+                      justifyContent="center"
+                      gap="2"
+                    >
+                      <Image
+                        src="/img/icons/reset.png"
+                        w="100px"
+                        h="100px"
+                        alignSelf="center"
+                        my="4"
+                      />
+                      <Text
+                        align="center"
+                        fontSize={{ base: "", md: "2xl" }}
+                        fontWeight="500"
+                      >
+                        {" "}
+                        Link Reset Telah dikirim
+                      </Text>
+                      <Text align="center">
+                        {" "}
+                        Kami telah mengirimkan instruksi reset password ke
+                        alamat email terdaftar.
+                      </Text>
+                    </AlertDialogBody>
+                    <AlertDialogFooter>
+                      <Button
+                        fontSize={{ base: "md", md: "lg" }}
+                        rightIcon={<MdArrowForwardIos />}
+                        colorScheme="blue"
+                        fontWeight="500"
+                        variant="its"
+                        w="full"
+                        size="lg"
+                        rounded="lg"
+                        onClick={closeAlertDialog}
+                      >
+                        Lanjutkan
+                      </Button>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
               </Flex>
               <Link href="/dashboard/beranda">
                 <Button
@@ -298,6 +373,6 @@ export default function Home(props: { [x: string]: any }) {
           </Card>
         </Flex>
       </Flex>
-      </>
+    </>
   );
 }
