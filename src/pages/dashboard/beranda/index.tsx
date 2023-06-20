@@ -18,7 +18,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
     <AdminLayout>
       <Box pt={{ base: "40px", md: "80px", xl: "80px" }}>
         <>
-          <Flex direction="column" gap={{ base:'20px',md:"24px" }}>
+          <Flex direction="column" gap={{ base: "20px", md: "24px" }}>
             <Banner />
             <Card
               boxShadow="lg"
@@ -35,10 +35,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Text
-                  fontSize={{ sm: "2xl", md: "3xl" }}
-                  fontWeight="500"
-                >
+                <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="500">
                   Anak Wali
                 </Text>
               </Box>
@@ -74,10 +71,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Text
-                  fontSize={{ sm: "2xl", md: "3xl" }}
-                  fontWeight="500"
-                >
+                <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="500">
                   Akademik
                 </Text>
               </Box>
@@ -113,10 +107,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Text
-                  fontSize={{ sm: "2xl", md: "3xl" }}
-                  fontWeight="500"
-                >
+                <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="500">
                   Ekstrakulikuler
                 </Text>
               </Box>
@@ -152,41 +143,79 @@ export default function Beranda(props: { [x: string]: unknown }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Text
-                  fontSize={{ sm: "2xl", md: "3xl" }}
-                  fontWeight="500"
-                >
+                <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="500">
                   Biaya Pendidikan
                 </Text>
               </Box>
 
-              <Flex
-                justifyContent={{ base: "left", md: "space-between" }}
-                
-                direction={{ base: "column", md: "row" }}
-                gap='3'
+              <Box
+                borderRadius="xl"
+                transition="all 0.3s ease-in-out"
+                borderColor="gray.200"
                 w="full"
               >
-                <Flex direction="column" alignItems="start">
-                  <Text fontSize={{ base:'lg',md:"xl" }} color="gray.500" fontWeight="normal">
-                    Tagihan UKT
-                  </Text>
-                  <Text fontSize={{ base:'xl',md:"3xl" }} color="red.600" fontWeight="500">
-                    Rp. 7.500.000,00
-                  </Text>
-                </Flex>
                 <Flex
-                  direction="column"
-                  alignItems={{ base: "start", md: "end" }}
+                  justifyContent="space-between"
+                  gap={{ base: "2", md: "" }}
+                  direction={{ base: "column", md: "row" }}
+                  alignItems={{ base: "left", md: "center" }}
+                  w="full"
                 >
-                  <Text fontSize={{ base:'lg',md:"xl" }} color="gray.500" fontWeight="normal">
-                    Batas Waktu Pembayaran
-                  </Text>
-                  <Text fontSize={{ base:'xl',md:"3xl" }} fontWeight="500">
-                    25 Desember 2023
-                  </Text>
+                  <Flex alignItems="center" gap="6">
+                    <Box>
+                      <Text
+                        fontSize={{ base: "lg", md: "xl" }}
+                        color="gray.500"
+                        fontWeight="normal"
+                      >
+                        Tagihan UKT
+                      </Text>
+                      <Flex
+                        gap={{ base: "1", md: "4" }}
+                        alignItems={{ base: "left", md: "center" }}
+                        direction={{ base: "column", md: "row" }}
+                      >
+                        <Text
+                          fontSize={{ base: "2xl", md: "3xl" }}
+                          fontWeight="500"
+                        >
+                          Rp. 7.500.000
+                        </Text>
+                        <Text
+                          // display={biaya.status == "Lunas" ? "none" : "block"}
+                          px="2"
+                          py="1"
+                          h="max-content"
+                          bgColor="red.100"
+                          fontSize={{ base: "md", md: "lg" }}
+                          color="red.500"
+                          fontWeight="500"
+                          rounded="lg"
+                          w="max-content"
+                        >
+                          Belum Lunas
+                        </Text>
+                      </Flex>
+                    </Box>
+                  </Flex>
+                  <Flex direction="column" alignItems={{ md: "end" }}>
+                    <Text
+                      fontSize={{ base: "lg", md: "xl" }}
+                      color="gray.500"
+                      fontWeight="normal"
+                    >
+                      Batas Pembayaran
+                    </Text>
+                    <Text
+                      fontSize={{ base: "2xl", md: "3xl" }}
+                      color= "red.500"
+                      fontWeight="500"
+                    >
+                      25 Desember 2023
+                    </Text>
+                  </Flex>
                 </Flex>
-              </Flex>
+              </Box>
               <Link href="/dashboard/biaya">
                 <Button
                   fontSize={{ base: "md", md: "lg" }}
@@ -218,10 +247,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
               {...rest}
             >
               <Box w="100%" justifyContent="left">
-                <Text
-                  fontSize={{ sm: "2xl", md: "3xl" }}
-                  fontWeight="500"
-                >
+                <Text fontSize={{ sm: "2xl", md: "3xl" }} fontWeight="500">
                   Ada Kesulitan?
                 </Text>
               </Box>
@@ -230,7 +256,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
                 alignItems="center"
                 gap="6"
                 w="full"
-                p={{ sm:'0',md:"2" }}
+                p={{ sm: "0", md: "2" }}
                 rounded="lg"
                 transition="all 0.2s ease-in-out"
                 _hover={{ bg: "biru.100" }}

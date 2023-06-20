@@ -1,30 +1,16 @@
 import { useState } from "react";
-import { Box, Text, Flex, Icon, Center, Divider } from "@chakra-ui/react";
+import { Box, Text, Flex, Icon, Center } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 import { IoMdArrowDropdownCircle } from "react-icons/io";
+import { Semester } from "types/list-nilai";
 
-type Data = {
-  id?: number;
-  name?: string;
-  description?: string;
-  semester?: string;
-  sks?: string;
-  nilai?: string;
-  ips?: string;
-};
-
-type DropdownProps = {
-  data: Data[];
-};
-
-const Dropdown = ({ data }: DropdownProps) => {
+const Dropdown = ({ semesterNumber, sks, ips, listNilai }: Semester) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
-  const ips = "3.75";
   return (
     <Box
       overflow="hidden"
@@ -39,7 +25,7 @@ const Dropdown = ({ data }: DropdownProps) => {
       <Flex
         align="center"
         justify=""
-        direction={{ base:'row-reverse', md:'row' }}
+        direction={{ base: "row-reverse", md: "row" }}
         cursor="pointer"
         onClick={handleToggle}
         w="full"
@@ -49,7 +35,7 @@ const Dropdown = ({ data }: DropdownProps) => {
         p="4"
       >
         <Icon
-          mr={{ base:'0',md:"8" }}
+          mr={{ base: "0", md: "8" }}
           boxSize={8}
           as={IoMdArrowDropdownCircle}
           transform={isOpen ? "rotate(180deg)" : undefined}
@@ -57,26 +43,24 @@ const Dropdown = ({ data }: DropdownProps) => {
         />
 
         <Flex
-          direction={{ base:'column',md:"row" }}
+          direction={{ base: "column", md: "row" }}
           justify="space-between"
-          alignItems={{ base:'left',md:"center" }}
+          alignItems={{ base: "left", md: "center" }}
           w="full"
         >
-          {data &&
-            data.map((item) => (
-              <Flex direction="column" gap="1" key={item.id}>
-                <Text
-                  w="full"
-                  fontSize={{ base: "xl", md: "2xl" }}
-                  fontWeight="500"
-                >
-                  {item.semester}
-                </Text>
-                <Text fontSize={{ base: "md", md: "lg" }} w="full">
-                  {item.sks}
-                </Text>
-              </Flex>
-            ))}
+          <Flex direction="column" gap="1" key={semesterNumber}>
+            <Text
+              w="full"
+              fontSize={{ base: "xl", md: "2xl" }}
+              fontWeight="500"
+            >
+              {semesterNumber}
+            </Text>
+            <Text fontSize={{ base: "md", md: "lg" }} w="full">
+              {sks}
+            </Text>
+          </Flex>
+
           <Flex
             align="center"
             gap="2"
@@ -85,7 +69,7 @@ const Dropdown = ({ data }: DropdownProps) => {
             px="4"
             rounded="xl"
             bg="green.100"
-            w='max-content'
+            w="max-content"
           >
             <Text
               fontSize={{ base: "md", md: "xl" }}
@@ -110,39 +94,47 @@ const Dropdown = ({ data }: DropdownProps) => {
         transition={{ duration: 0.3 }}
         style={{ overflow: "hidden" }}
       >
-        <Box px={8} mb="4" mt="-4">
-          {data &&
-            data.map((item) => (
-              <Flex justify="space-between" direction={{ base:'column',md:'row' }} alignItems={{ base:'left',md:"center" }} key={item.id}>
-                <Flex direction="column" mt={{ md:"2" }} gap="1">
-                  <Divider display={{ base:'block', md:'none' }} orientation="horizontal" mb='2' borderColor='gray.400' />
-                  <Text
-                    w="full"
-                    fontSize={{ base: "md", md: "xl" }}
-                    fontWeight="500"
-                  >
-                    {item.name}
-                  </Text>
-                  <Text mb="2" fontSize={{ base: "md", md: "lg" }}>
-                    {item.description}
-                  </Text>
-                </Flex>
-                {item.nilai && (
-                  <Center
-                    rounded="xl"
-                    alignItems="center"
-                    justifyContent="center"
-                    h={{ base:'30px',md:"48px" }}
-                    w={{ base:'100px',md:"120px" }}
-                    color="biru.500"
-                    bg="biru.100"
-                    mb={{ base:'4',md:"0" } }
-                  >
-                    <Text fontSize={{ base:'sm',md:'md' }} fontWeight="500">{item.nilai}</Text>
-                  </Center>
-                )}
+        <Box px={8} mb="2">
+          {listNilai.map((list) => (
+            <Flex
+              justify="space-between"
+              direction={{ base: "column", md: "row" }}
+              alignItems={{ base: "left", md: "center" }}
+              borderTop="1px"
+              borderColor="gray.400"
+              py="2"
+              key={list.id}
+            >
+              <Flex direction="column" mt={{ md: "2" }} gap="1" w="full">
+                <Text
+                  w="full"
+                  fontSize={{ base: "md", md: "xl" }}
+                  fontWeight="500"
+                >
+                  {list.name}
+                </Text>
+                <Text mb="2" fontSize={{ base: "md", md: "lg" }}>
+                  {list.description}
+                </Text>
               </Flex>
-            ))}
+              {list.nilai && (
+                <Center
+                  rounded="xl"
+                  alignItems="center"
+                  justifyContent="center"
+                  h={{ base: "30px", md: "48px" }}
+                  w={{ base: "100px", md: "120px" }}
+                  color="biru.500"
+                  bg="biru.100"
+                  mb={{ base: "4", md: "0" }}
+                >
+                  <Text fontSize={{ base: "sm", md: "md" }} fontWeight="500">
+                    {list.nilai}
+                  </Text>
+                </Center>
+              )}
+            </Flex>
+          ))}
         </Box>
       </motion.div>
     </Box>
