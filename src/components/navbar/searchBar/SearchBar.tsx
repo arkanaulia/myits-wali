@@ -16,7 +16,6 @@ export function SearchBar (props: {
   const {
     background,
     placeholder,
-    borderRadius,
     ...rest
   } = props
   // Chakra Color Mode
