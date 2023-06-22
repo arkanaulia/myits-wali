@@ -10,13 +10,15 @@ import "styles/Contact.css";
 import "react-calendar/dist/Calendar.css";
 import "styles/MiniCalendar.css";
 import Head from "next/head";
+import Script from "next/script";
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <Head>
-        <script>Maze script content</script>
-
+        <Script src="/utils/maze.js" />
+        
         <title>myITS Wali</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
