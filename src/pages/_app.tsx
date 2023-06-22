@@ -15,6 +15,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <Head>
+        <script>Maze script content</script>
+
         <title>myITS Wali</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />

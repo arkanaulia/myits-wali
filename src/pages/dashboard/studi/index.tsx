@@ -10,141 +10,16 @@ import {
 import AdminLayout from "layouts/admin";
 import { Image } from "components/image/Image";
 import Card from "components/card/Card";
-import Dropdown from "./components/Dropdown";
+import Dropdown from "../../../components/studi/Dropdown";
 import LineGraph from "./components/Graph";
 import Link from "next/link";
 import { Semester } from "types/list-nilai";
 
-const semester: Semester[] = [
-  {
-    semesterNumber: "Semester 5",
-    sks: "18 sks",
-    ips: 3.75,
-    listNilai: [
-      {
-        id: 1,
-        name: "Perancangan Perangkat Lunak",
-        description: "IF4501 - 3 sks",
-        nilai: "Nilai: A",
-      },
-      {
-        id: 2,
-        name: "Grafika Komputer",
-        description: "IF4501 - 3 sks",
-        nilai: "Nilai: A",
-      },
-      {
-        id: 3,
-        name: "Kecerdasan Komputasional",
-        description: "IF4501 - 3 sks",
-        nilai: "Nilai: A",
-      },
-    ],
-  },
-  {
-    semesterNumber: "Semester 4",
-    sks: "18 sks",
-    ips: 3.75,
-    listNilai: [
-      {
-        id: 1,
-        name: "Perancangan Perangkat Lunak",
-        description: "IF4501 - 3 sks",
-        nilai: "Nilai: A",
-      },
-      {
-        id: 2,
-        name: "Grafika Komputer",
-        description: "IF4501 - 3 sks",
-        nilai: "Nilai: A",
-      },
-      {
-        id: 3,
-        name: "Kecerdasan Komputasional",
-        description: "IF4501 - 3 sks",
-        nilai: "Nilai: A",
-      },
-    ],
-  },
-  {
-    semesterNumber: "Semester 3",
-    sks: "18 sks",
-    ips: 3.75,
-    listNilai: [
-      {
-        id: 1,
-        name: "Perancangan Perangkat Lunak",
-        description: "IF4501 - 3 sks",
-        nilai: "Nilai: A",
-      },
-      {
-        id: 2,
-        name: "Grafika Komputer",
-        description: "IF4501 - 3 sks",
-        nilai: "Nilai: A",
-      },
-      {
-        id: 3,
-        name: "Kecerdasan Komputasional",
-        description: "IF4501 - 3 sks",
-        nilai: "Nilai: A",
-      },
-    ],
-  },
-  {
-    semesterNumber: "Semester 2",
-    sks: "18 sks",
-    ips: 3.75,
-    listNilai: [
-      {
-        id: 1,
-        name: "Perancangan Perangkat Lunak",
-        description: "IF4501 - 3 sks",
-        nilai: "Nilai: A",
-      },
-      {
-        id: 2,
-        name: "Grafika Komputer",
-        description: "IF4501 - 3 sks",
-        nilai: "Nilai: A",
-      },
-      {
-        id: 3,
-        name: "Kecerdasan Komputasional",
-        description: "IF4501 - 3 sks",
-        nilai: "Nilai: A",
-      },
-    ],
-  },
-  {
-    semesterNumber: "Semester 1",
-    sks: "18 sks",
-    ips: 3.75,
-    listNilai: [
-      {
-        id: 1,
-        name: "Perancangan Perangkat Lunak",
-        description: "IF4501 - 3 sks",
-        nilai: "Nilai: A",
-      },
-      {
-        id: 2,
-        name: "Grafika Komputer",
-        description: "IF4501 - 3 sks",
-        nilai: "Nilai: A",
-      },
-      {
-        id: 3,
-        name: "Kecerdasan Komputasional",
-        description: "IF4501 - 3 sks",
-        nilai: "Nilai: A",
-      },
-    ],
-  },
-];
+
 
 const ProfileTab = () => {
   const avatarSize = useBreakpointValue({ base: "md", md: "lg" });
+  
   return (
     <Flex
       alignItems="center"
@@ -236,7 +111,133 @@ const ProfileTab = () => {
 
 export default function studi() {
   // Chakra Color Mode
-
+  const semester: Semester[] = [
+    {
+      semesterNumber: "Semester 5",
+      sks: "18 sks",
+      ips: 3.75,
+      listNilai: [
+        {
+          id: 1,
+          name: "Perancangan Perangkat Lunak",
+          description: "IF4501 - 3 sks",
+          nilai: "Nilai: A",
+        },
+        {
+          id: 2,
+          name: "Grafika Komputer",
+          description: "IF4501 - 3 sks",
+          nilai: "Nilai: A",
+        },
+        {
+          id: 3,
+          name: "Kecerdasan Komputasional",
+          description: "IF4501 - 3 sks",
+          nilai: "Nilai: A",
+        },
+      ],
+    },
+    {
+      semesterNumber: "Semester 4",
+      sks: "18 sks",
+      ips: 3.75,
+      listNilai: [
+        {
+          id: 1,
+          name: "Perancangan Perangkat Lunak",
+          description: "IF4501 - 3 sks",
+          nilai: "Nilai: A",
+        },
+        {
+          id: 2,
+          name: "Grafika Komputer",
+          description: "IF4501 - 3 sks",
+          nilai: "Nilai: A",
+        },
+        {
+          id: 3,
+          name: "Kecerdasan Komputasional",
+          description: "IF4501 - 3 sks",
+          nilai: "Nilai: A",
+        },
+      ],
+    },
+    {
+      semesterNumber: "Semester 3",
+      sks: "18 sks",
+      ips: 3.75,
+      listNilai: [
+        {
+          id: 1,
+          name: "Perancangan Perangkat Lunak",
+          description: "IF4501 - 3 sks",
+          nilai: "Nilai: A",
+        },
+        {
+          id: 2,
+          name: "Grafika Komputer",
+          description: "IF4501 - 3 sks",
+          nilai: "Nilai: A",
+        },
+        {
+          id: 3,
+          name: "Kecerdasan Komputasional",
+          description: "IF4501 - 3 sks",
+          nilai: "Nilai: A",
+        },
+      ],
+    },
+    {
+      semesterNumber: "Semester 2",
+      sks: "18 sks",
+      ips: 3.75,
+      listNilai: [
+        {
+          id: 1,
+          name: "Perancangan Perangkat Lunak",
+          description: "IF4501 - 3 sks",
+          nilai: "Nilai: A",
+        },
+        {
+          id: 2,
+          name: "Grafika Komputer",
+          description: "IF4501 - 3 sks",
+          nilai: "Nilai: A",
+        },
+        {
+          id: 3,
+          name: "Kecerdasan Komputasional",
+          description: "IF4501 - 3 sks",
+          nilai: "Nilai: A",
+        },
+      ],
+    },
+    {
+      semesterNumber: "Semester 1",
+      sks: "18 sks",
+      ips: 3.75,
+      listNilai: [
+        {
+          id: 1,
+          name: "Perancangan Perangkat Lunak",
+          description: "IF4501 - 3 sks",
+          nilai: "Nilai: A",
+        },
+        {
+          id: 2,
+          name: "Grafika Komputer",
+          description: "IF4501 - 3 sks",
+          nilai: "Nilai: A",
+        },
+        {
+          id: 3,
+          name: "Kecerdasan Komputasional",
+          description: "IF4501 - 3 sks",
+          nilai: "Nilai: A",
+        },
+      ],
+    },
+  ];
   return (
     <AdminLayout>
       <Box pt={{ base: "40px", md: "80px", xl: "80px" }}>
@@ -298,7 +299,7 @@ export default function studi() {
                 direction="column"
                 gap={{ base: "10px", md: "4px" }}
               >
-                {semester.map((item, index) => (
+                {semester?.map((item, index) => (
                   <Dropdown
                     key={index}
                     ips={item.ips}
