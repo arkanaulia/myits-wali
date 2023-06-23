@@ -18,8 +18,10 @@ import {
   ModalBody,
   ModalFooter,
   Text,
+  Select,
+  Stack,
 } from "@chakra-ui/react";
-import {CgUnavailable} from "react-icons/cg";
+import { CgUnavailable } from "react-icons/cg";
 
 interface User {
   namaOrangTua?: ReactNode;
@@ -53,6 +55,31 @@ const DataTable = ({ users }: Props) => {
     console.log(`Deleting user with ID: ${userId}`);
   };
 
+  // ...
+
+  const waliData = [
+    {
+      id: 1,
+      nama: "Wali 1",
+      namaOrangTua: "Nama Orang Tua 1",
+      namaAnakWali: "Nama Anak Wali 1",
+      noHandphone: "No Handphone 1",
+      email: "Email 1",
+    },
+    {
+      id: 2,
+      nama: "Wali 1",
+      namaOrangTua: "Nama Orang Tua 1",
+      namaAnakWali: "Nama Anak Wali 1",
+      noHandphone: "No Handphone 1",
+      email: "Email 1",
+    },
+    
+    // Tambahkan data wali sesuai kebutuhan
+  ];
+  const [selectedWali, setSelectedWali] = useState(
+    waliData.length === 1 ? 1 : null
+  );
   return (
     <>
       <TableContainer w="full">
@@ -108,39 +135,104 @@ const DataTable = ({ users }: Props) => {
       </TableContainer>
 
       {/* Modal */}
-      <Modal isCentered isOpen={selectedUser !== null} onClose={closeModal} size="xl">
+      <Modal
+        isCentered
+        isOpen={selectedUser !== null}
+        onClose={closeModal}
+        size="xl"
+      >
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Informasi Wali</ModalHeader>
           <ModalCloseButton />
+          {waliData.length > 1 && (
+            <Stack  direction="row" align="center" spacing={4} py='2' px={6}>
+              <Text w='10vw' fontWeight={500}>Nama Wali:</Text>
+              <Select
+              w='full'
+                value={selectedWali}
+                onChange={(e) => setSelectedWali(parseInt(e.target.value))}
+              >
+                {waliData.map((wali) => (
+                  <option key={wali.id} value={wali.id}>
+                    {wali.nama}
+                  </option>
+                ))}
+              </Select>
+            </Stack>
+          )}
           {selectedUser && (
             <ModalBody>
               <Box mb={4}>
-                <Text mb='1'>Nama Orang Tua</Text>{" "}
-                <Box p='2' bgColor='gray.200' rounded='md' border='1px' color='gray.700' borderColor='gray.300' >{selectedUser.namaOrangTua}</Box>
+                <Text mb="1">Nama Orang Tua</Text>
+                <Box
+                  p="2"
+                  bgColor="gray.200"
+                  rounded="md"
+                  border="1px"
+                  color="gray.700"
+                  borderColor="gray.300"
+                >
+                  {
+                    waliData.find((wali) => wali.id === selectedWali)
+                      ?.namaOrangTua
+                  }
+                </Box>
               </Box>
               <Box mb={4}>
-                <Text mb='1'>Nama Anak Wali</Text>{" "}
-                <Box p='2' bgColor='gray.200' rounded='md' border='1px' color='gray.700' borderColor='gray.300' >{selectedUser.namaAnakWali}</Box>
+                <Text mb="1">Nama Anak Wali</Text>
+                <Box
+                  p="2"
+                  bgColor="gray.200"
+                  rounded="md"
+                  border="1px"
+                  color="gray.700"
+                  borderColor="gray.300"
+                >
+                  {
+                    waliData.find((wali) => wali.id === selectedWali)
+                      ?.namaAnakWali
+                  }
+                </Box>
               </Box>
               <Box mb={4}>
-                <Text mb='1'>No Handphone</Text>{" "}
-                <Box p='2' bgColor='gray.200' rounded='md' border='1px' color='gray.700' borderColor='gray.300' >{selectedUser.noHandphone}</Box>
+                <Text mb="1">No Handphone</Text>
+                <Box
+                  p="2"
+                  bgColor="gray.200"
+                  rounded="md"
+                  border="1px"
+                  color="gray.700"
+                  borderColor="gray.300"
+                >
+                  {
+                    waliData.find((wali) => wali.id === selectedWali)
+                      ?.noHandphone
+                  }
+                </Box>
               </Box>
               <Box mb={0}>
-                <Text mb='1'>Email</Text>{" "}
-                <Box p='2' bgColor='gray.200' rounded='md' border='1px' color='gray.700' borderColor='gray.300' >{selectedUser.email}</Box>
+                <Text mb="1">Email</Text>
+                <Box
+                  p="2"
+                  bgColor="gray.200"
+                  rounded="md"
+                  border="1px"
+                  color="gray.700"
+                  borderColor="gray.300"
+                >
+                  {waliData.find((wali) => wali.id === selectedWali)?.email}
+                </Box>
               </Box>
-             
             </ModalBody>
           )}
           <ModalFooter>
             <Button
               colorScheme="red"
-              rounded='lg'
+              rounded="lg"
               onClick={() => deleteUser(selectedUser?.id)}
               rightIcon={<CgUnavailable />}
-              mb='2'
+              mb="2"
             >
               Nonaktifkan
             </Button>

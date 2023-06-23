@@ -26,6 +26,7 @@ import {
 import Card from "components/card/Card";
 import React, { useState } from "react";
 import { MdArrowForwardIos, MdOutlineRemoveRedEye } from "react-icons/md";
+import { AiFillInfoCircle } from "react-icons/ai";
 import { RiEyeCloseLine } from "react-icons/ri";
 import Link from "next/link";
 import Carousel from "components/modal/CarouselModal";
@@ -65,22 +66,27 @@ export default function Home(props: { [x: string]: any }) {
     {
       title: "Slide 1",
       image: "/img/tatacara/cara1.png",
+      imageMobile: "/img/tatacara/cara1-m.png",
     },
     {
       title: "Slide 2",
-      image: "/img/tatacara/cara1.png",
+      image: "/img/tatacara/cara2.png",
+      imageMobile: "/img/tatacara/cara2-m.png",
     },
     {
       title: "Slide 3",
-      image: "/img/tatacara/cara1.png",
+      image: "/img/tatacara/cara3.png",
+      imageMobile: "/img/tatacara/cara3-m.png",
     },
     {
       title: "Slide 4",
-      image: "/img/tatacara/cara1.png",
+      image: "/img/tatacara/cara4.png",
+      imageMobile: "/img/tatacara/cara4-m.png",
     },
     {
       title: "Slide 5",
-      image: "/img/tatacara/cara1.png",
+      image: "/img/tatacara/cara5.png",
+      imageMobile: "/img/tatacara/cara5-m.png",
     },
   ];
 
@@ -143,7 +149,36 @@ export default function Home(props: { [x: string]: any }) {
               <Text fontSize={{ sm: "xl", md: "3xl" }} fontWeight="500">
                 Sebagai Wali
               </Text>
+            </Flex> 
+            <Flex
+              bg="green.100"
+              color="green.700"
+              w="full"
+              p="2"
+              rounded="lg"
+              fontWeight="500"
+              alignItems='center'
+              fontSize={{ base: "sm", md: "md" }}
+              gap='2'
+              mb={{ base:'0',md:'-2' }}
+            >
+              <AiFillInfoCircle />
+              Mohon lihat panduan jika belum memiliki akun
             </Flex>
+            <Button
+              fontSize={{ base: "md", md: "lg" }}
+              rightIcon={<MdArrowForwardIos />}
+              colorScheme="blue"
+              fontWeight="500"
+              variant="outline"
+              w="full"
+              size="lg"
+              rounded="lg"
+              onClick={() => setShowModal(true)}
+            >
+              Lihat Panduan Pendaftaran
+            </Button>
+
             <FormControl>
               <FormLabel
                 display="flex"
@@ -309,34 +344,22 @@ export default function Home(props: { [x: string]: any }) {
                   w="full"
                   size="lg"
                   rounded="lg"
-                  mb={{ base: "4", md: "4" }}
                 >
                   Masuk Sebagai Wali
                 </Button>
               </Link>
-              <Button
-                fontSize={{ base: "md", md: "lg" }}
-                rightIcon={<MdArrowForwardIos />}
-                colorScheme="blue"
-                fontWeight="500"
-                variant="outline"
-                w="full"
-                size="lg"
-                rounded="lg"
-                onClick={() => setShowModal(true)}
-              >
-                Lihat Panduan Pendaftaran
-              </Button>
 
               <Modal
                 isOpen={showModal}
                 onClose={closeModal}
-                size="2xl"
+                size="4xl"
                 isCentered
               >
                 <ModalOverlay />
-                <ModalContent>
-                  <ModalHeader>Tata Cara Pembuatan Akun</ModalHeader>
+                <ModalContent rounded="2xl">
+                  <ModalHeader fontSize={{ base:'lg',md:"2xl" }}>
+                    Tata Cara Pembuatan Akun
+                  </ModalHeader>
                   <ModalCloseButton />
                   <ModalBody>
                     <Carousel slides={carouselSlides} closeModal={closeModal} />

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Box, Image, Flex, Button } from "@chakra-ui/react";
+import { Box, Image, Flex, Button, useBreakpointValue } from "@chakra-ui/react";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import { AiOutlineClose } from "react-icons/ai";
 
 interface CarouselProps {
   slides: {
     image: string;
+    imageMobile: string;
     title: string;
   }[];
   closeModal: () => void;
@@ -31,6 +32,8 @@ const Carousel = ({ slides, closeModal }: CarouselProps) => {
    setCurrentIndex(0); // Reset currentIndex saat modal ditutup
  };
 
+ const isMobile = useBreakpointValue({ base: true, md: false });
+
   return (
     <Flex
       direction="column"
@@ -39,7 +42,7 @@ const Carousel = ({ slides, closeModal }: CarouselProps) => {
       gap="6"
     >
       <Image
-        src={slides[currentIndex].image}
+        src={isMobile? slides[currentIndex].imageMobile : slides[currentIndex].image}
         alt={slides[currentIndex].title}
       />
       <Flex justifyContent="center">

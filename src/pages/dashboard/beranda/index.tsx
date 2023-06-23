@@ -227,7 +227,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
                   size="lg"
                   rounded="lg"
                 >
-                  Lihat Ekstrakulikuler Lainnya
+                  Lihat Biaya Pendidikan
                 </Button>
               </Link>
             </Card>
