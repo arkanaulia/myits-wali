@@ -10,7 +10,7 @@ import {
   Divider,
   Center,
 } from "@chakra-ui/react";
-import { IoIosArrowDropdownCircle } from "react-icons/io";
+import { IoMdArrowDropdownCircle } from "react-icons/io";
 import { motion } from "framer-motion";
 
 // Data dummy untuk daftar presensi
@@ -160,7 +160,8 @@ const PresensiComponent = () => {
                 <Icon
                   mr={{ base: "0", md: "8" }}
                   boxSize={8}
-                  as={IoIosArrowDropdownCircle}
+          color='biru.400'
+          as={IoMdArrowDropdownCircle}
                   transform={isOpen[presensi.id] ? "rotate(180deg)" : undefined}
                   transition="transform 0.3s ease-in-out"
                 />

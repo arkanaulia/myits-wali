@@ -15,13 +15,13 @@ import {
 } from "@chakra-ui/react";
 
 
-import { IoMdArrowDropdown } from "react-icons/io";
 import { HiUser } from "react-icons/hi";
 import { HiSwitchVertical } from "react-icons/hi";
 import { IoLogOut } from "react-icons/io5";
 import Link from "next/link";
 import ChildModal from "pages/dashboard/beranda/components/ChildModal";
 import { useState } from "react";
+import { IoMdArrowDropdownCircle } from "react-icons/io";
 
 // FUNCTIONS
 
@@ -92,7 +92,7 @@ const ProfileTab = () => {
               </Text>
             </VStack>
             <Box ml="4">
-              <Icon as={IoMdArrowDropdown} boxSize="6" />
+              <Icon as={IoMdArrowDropdownCircle} boxSize="7" color='biru.400' />
             </Box>
           </Flex>
         </MenuButton>

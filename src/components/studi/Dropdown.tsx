@@ -37,6 +37,7 @@ const Dropdown = ({ semesterNumber, sks, ips, listNilai }: Semester) => {
         <Icon
           mr={{ base: "0", md: "8" }}
           boxSize={8}
+          color='biru.400'
           as={IoMdArrowDropdownCircle}
           transform={isOpen ? "rotate(180deg)" : undefined}
           transition="transform 0.3s ease-in-out"
