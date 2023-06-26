@@ -28,6 +28,7 @@ import React, { useState } from "react";
 import { MdArrowForwardIos, MdOutlineRemoveRedEye } from "react-icons/md";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { RiEyeCloseLine } from "react-icons/ri";
+import { GoBook } from "react-icons/go";
 import Link from "next/link";
 import Carousel from "components/modal/CarouselModal";
 
@@ -167,7 +168,7 @@ export default function Home(props: { [x: string]: any }) {
             </Flex>
             <Button
               fontSize={{ base: "md", md: "lg" }}
-              rightIcon={<MdArrowForwardIos />}
+              leftIcon={<GoBook />}
               colorScheme="blue"
               fontWeight="500"
               variant="outline"
