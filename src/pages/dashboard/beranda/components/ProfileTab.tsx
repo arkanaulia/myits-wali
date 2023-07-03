@@ -80,18 +80,19 @@ const ProfileTab = () => {
   };
 
   const renderChildModal = () => {
+    const modalSize = useBreakpointValue({ base: "sm", md: "lg" });
     return (
       <Modal
         isCentered
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        size="lg"
+        size={modalSize}
       >
         <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(5px)" />
         <ModalOverlay />
         <Center>
-          <ModalContent p="24px">
-            <ModalHeader>Pilih Anak Wali</ModalHeader>
+          <ModalContent py="24px" px='10px'>
+            <ModalHeader fontSize={{ base:'xl',md:'2xl' }}>Pilih Anak Wali</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
               <VStack spacing="4">

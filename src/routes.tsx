@@ -42,7 +42,7 @@ const routes: IRoute[] = [
     icon: <Image src='/img/icons/biaya.png' boxSize='6' />,
   },
   {
-    name: "Kelola Akun Wali",
+    name: "Akun Wali",
     layout: "/dashboard",
     path: "/kelola-wali",
     icon: <Image src='/img/icons/kelolawali.png' boxSize='6' />,

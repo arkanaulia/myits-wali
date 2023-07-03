@@ -122,6 +122,10 @@ const PresensiComponent = () => {
           </Select>
         </Box>
       </Flex>
+      <Flex fontSize={{ base: "lg", md: "xl" }} mb='6' bgColor='biru.100' p='2' rounded='lg' fontWeight='500' w="full" color='biru.500'>
+        <Text>Semester Ganjil - Tahun 2022</Text>
+        
+      </Flex>
 
       <VStack align="stretch" spacing={{ base:'3', md:'1' }}>
         {filteredPresensiData.map((presensi) => (

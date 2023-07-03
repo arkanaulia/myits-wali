@@ -31,6 +31,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
               backgroundPosition="center"
               backgroundSize="auto"
               backgroundBlendMode="hard-light"
+              
               w="100%"
               {...rest}
             >
@@ -139,6 +140,7 @@ export default function Beranda(props: { [x: string]: unknown }) {
               backgroundPosition="center"
               backgroundSize="auto"
               backgroundBlendMode="hard-light"
+              
               w="100%"
               {...rest}
             >

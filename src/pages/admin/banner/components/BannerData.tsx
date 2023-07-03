@@ -70,7 +70,7 @@ const BannerCarousel = () => {
             colorScheme="red"
             onClick={handleDeleteBanner}
           >
-            Delete Banner
+            Hapus Banner
           </Button>
         </Flex>
       </Box>
@@ -96,7 +96,7 @@ const BannerCarousel = () => {
           colorScheme="blue"
           onClick={handlePreviousBanner}
         >
-          Previous
+          Sebelumnya
         </Button>
         <Button
           mx="2"
@@ -106,7 +106,7 @@ const BannerCarousel = () => {
           colorScheme="blue"
           onClick={handleNextBanner}
         >
-          Next
+          Selanjutnya
         </Button>
       </Box>
     </Box>

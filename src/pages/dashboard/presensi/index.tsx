@@ -6,6 +6,7 @@ import Card from "components/card/Card";
 import PresensiComponent from "./components/PresensiData";
 import ProfileTab from "./components/Header";
 import Link from "next/link";
+import { IoMdArrowRoundBack } from "react-icons/io";
 export default function Presensi(props: { [x: string]: any }) {
   // Chakra Color Mode
   const { ...rest } = props;
@@ -14,7 +15,25 @@ export default function Presensi(props: { [x: string]: any }) {
     <AdminLayout>
       <Box pt={{ base: "40px", md: "80px", xl: "80px" }}>
         <>
-          <Flex direction="column" gap={{ base:'20px',md:"24px" }}>
+          <Flex direction="column" gap={{ base: "20px", md: "24px" }}>
+            <Link href="/dashboard/beranda">
+              <Flex
+                w="full"
+                alignItems="center"
+                gap="2"
+                fontSize="xl"
+                fontWeight="500"
+                transition="all 0.3s ease"
+                cursor="pointer"
+                _hover={{
+                  textDecoration: "underline",
+                }}
+                my="2"
+              >
+                <IoMdArrowRoundBack />
+                Kembali
+              </Flex>
+            </Link>
             <Flex alignItems="center" gap="6" w="full">
               <Box>
                 <Image
@@ -61,9 +80,13 @@ export default function Presensi(props: { [x: string]: any }) {
               {...rest}
             >
               <PresensiComponent />
+              <Flex justify="right" w="full" color="gray.500">
+                <Text>
+                  Data terakhir diupdate pada sabtu, 03 Januari 2023 pukul 13.00
+                </Text>
+              </Flex>
             </Card>
 
-            
             <Card
               boxShadow="lg"
               p={{ base: "24px", md: "32px" }}
@@ -84,7 +107,7 @@ export default function Presensi(props: { [x: string]: any }) {
                 </Text>
               </Box>
 
-              <VStack spacing={{ base:'1',md:'3' }} align="left" w="full">
+              <VStack spacing={{ base: "1", md: "3" }} align="left" w="full">
                 <Link href="/dashboard/studi">
                   <Flex
                     alignItems="center"
@@ -99,16 +122,22 @@ export default function Presensi(props: { [x: string]: any }) {
                     <Box>
                       <Image
                         src="/img/icons/studi.png"
-                        h={{ base:'30px',md:"40px" }}
-                        w={{ base:'30px',md:"40px" }}
+                        h={{ base: "30px", md: "40px" }}
+                        w={{ base: "30px", md: "40px" }}
                         alt="info"
                       />
                     </Box>
                     <Box>
-                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="500">
+                      <Text
+                        fontSize={{ base: "xl", md: "2xl" }}
+                        fontWeight="500"
+                      >
                         Kemajuan Studi
                       </Text>
-                      <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">
+                      <Text
+                        fontSize={{ base: "md", md: "lg" }}
+                        fontWeight="normal"
+                      >
                         Klik disini untuk mengakses halaman Kemajuan Studi!
                       </Text>
                     </Box>
@@ -129,16 +158,22 @@ export default function Presensi(props: { [x: string]: any }) {
                     <Box>
                       <Image
                         src="/img/icons/biaya.png"
-                        h={{ base:'30px',md:"40px" }}
-                        w={{ base:'30px',md:"40px" }}
+                        h={{ base: "30px", md: "40px" }}
+                        w={{ base: "30px", md: "40px" }}
                         alt="info"
                       />
                     </Box>
                     <Box>
-                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="500">
+                      <Text
+                        fontSize={{ base: "xl", md: "2xl" }}
+                        fontWeight="500"
+                      >
                         Biaya Pendidikan
                       </Text>
-                      <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">
+                      <Text
+                        fontSize={{ base: "md", md: "lg" }}
+                        fontWeight="normal"
+                      >
                         Klik disini untuk mengakses halaman Biaya Pendidikan!
                       </Text>
                     </Box>
@@ -159,16 +194,22 @@ export default function Presensi(props: { [x: string]: any }) {
                     <Box>
                       <Image
                         src="/img/icons/ekskul.png"
-                        h={{ base:'30px',md:"40px" }}
-                        w={{ base:'30px',md:"40px" }}
+                        h={{ base: "30px", md: "40px" }}
+                        w={{ base: "30px", md: "40px" }}
                         alt="info"
                       />
                     </Box>
                     <Box>
-                      <Text fontSize={{ base:'xl',md:"2xl" }} fontWeight="500">
+                      <Text
+                        fontSize={{ base: "xl", md: "2xl" }}
+                        fontWeight="500"
+                      >
                         Ekstrakurikuler
                       </Text>
-                      <Text fontSize={{ base:'md',md:"lg" }} fontWeight="normal">
+                      <Text
+                        fontSize={{ base: "md", md: "lg" }}
+                        fontWeight="normal"
+                      >
                         Klik disini untuk mengakses halaman Ekstrakurikuler!
                       </Text>
                     </Box>

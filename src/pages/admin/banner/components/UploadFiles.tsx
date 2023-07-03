@@ -122,7 +122,7 @@ const FileUpload = () => {
             </Box>
           )}
           <Button colorScheme="red" mt={2} onClick={handleRemoveFile}>
-            Remove File
+            Hilangkan File
           </Button>
         </Box>
       )}

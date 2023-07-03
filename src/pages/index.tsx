@@ -21,6 +21,7 @@ import {
   ModalHeader,
   ModalOverlay,
   Text,
+  useBreakpointValue,
   useColorModeValue,
 } from "@chakra-ui/react";
 import Card from "components/card/Card";
@@ -90,6 +91,9 @@ export default function Home(props: { [x: string]: any }) {
       imageMobile: "/img/tatacara/cara5-m.png",
     },
   ];
+
+  const modalSize = useBreakpointValue({ base: "4xl", md: "4xl" });
+  const modalSize2 = useBreakpointValue({ base: "sm", md: "xl" });
 
   return (
     <>
@@ -188,7 +192,7 @@ export default function Home(props: { [x: string]: any }) {
                 color={textColor}
                 mb={{ base: "4px", md: "8px" }}
               >
-                Username
+                Email/No. Handphone
               </FormLabel>
               <Input
                 isRequired={true}
@@ -197,7 +201,7 @@ export default function Home(props: { [x: string]: any }) {
                 fontSize={{ base: "sm", md: "md" }}
                 ms={{ base: "0px", md: "0px" }}
                 type="email"
-                placeholder="mail@simmmple.com"
+                placeholder="Masukkan Email/No. Handphone"
                 mb={{ base: "8px", md: "16px" }}
                 fontWeight="500"
                 size="lg"
@@ -216,7 +220,7 @@ export default function Home(props: { [x: string]: any }) {
                   isRequired={true}
                   rounded="lg"
                   fontSize={{ base: "sm", md: "md" }}
-                  placeholder="Min. 8 characters"
+                  placeholder="Masukkan Password"
                   mb={{ base: "10px", md: "16px" }}
                   size="lg"
                   type={show ? "text" : "password"}
@@ -252,7 +256,7 @@ export default function Home(props: { [x: string]: any }) {
                 <Modal
                   isOpen={showModalPass}
                   onClose={closeModalPass}
-                  size="xl"
+                  size={modalSize2}
                   isCentered
                 >
                   <ModalOverlay />
@@ -287,6 +291,7 @@ export default function Home(props: { [x: string]: any }) {
                   onClose={closeAlertDialog}
                   isCentered
                   leastDestructiveRef={undefined}
+                  size={modalSize2}
                 >
                   <AlertDialogOverlay />
                   <AlertDialogContent rounded="xl" py="2">
@@ -305,7 +310,7 @@ export default function Home(props: { [x: string]: any }) {
                       />
                       <Text
                         align="center"
-                        fontSize={{ base: "", md: "2xl" }}
+                        fontSize={{ base: "xl", md: "2xl" }}
                         fontWeight="500"
                       >
                         {" "}
@@ -353,7 +358,7 @@ export default function Home(props: { [x: string]: any }) {
               <Modal
                 isOpen={showModal}
                 onClose={closeModal}
-                size="4xl"
+                size={modalSize}
                 isCentered
               >
                 <ModalOverlay />

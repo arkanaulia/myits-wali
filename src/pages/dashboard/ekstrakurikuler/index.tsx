@@ -12,6 +12,7 @@ import { Image } from "components/image/Image";
 import Card from "components/card/Card";
 import EkskulList from "./components/EkskulList";
 import Link from "next/link";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 const ProfileTab = () => {
   const avatarSize = useBreakpointValue({ base: "md", md: "lg" });
@@ -141,6 +142,24 @@ const Ekskul = (props: { [x: string]: any }) => {
       <Box pt={{ base: "40px", md: "80px", xl: "80px" }}>
         <>
           <Flex direction="column" gap={{ base:'20px',md:"24px" }}>
+          <Link href="/dashboard/beranda">
+            <Flex
+              w="full"
+              alignItems="center"
+              gap="2"
+              fontSize="xl"
+              fontWeight="500"
+              transition= "all 0.3s ease"
+              cursor='pointer'
+              _hover={{
+                textDecoration: "underline",
+              }}
+              my='2'
+            >
+              <IoMdArrowRoundBack />
+              Kembali
+            </Flex>
+            </Link>
             <Flex alignItems="center" gap="6" w="full">
               <Box>
                 <Image

@@ -6,6 +6,7 @@ import Card from "components/card/Card";
 import ProfileTab from "./components/Header";
 import Link from "next/link";
 import ProfilData from "./components/ProfilData";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 export default function Presensi(props: { [x: string]: any }) {
   // Chakra Color Mode
@@ -28,7 +29,6 @@ export default function Presensi(props: { [x: string]: any }) {
   const akademik = [
     { title: "Jalur Terima", value: "SBMPTN" },
     { title: "Tanggal Masuk ITS", value: "1 Agustus 2019" },
-    { title: "No. Ujian Masuk", value: "1190248349" },
     { title: "Asal Sekolah", value: "SMAN 81 Jakarta" },
   ];
   const ortu = [
@@ -46,6 +46,24 @@ export default function Presensi(props: { [x: string]: any }) {
       <Box pt={{ base: "40px", md: "80px", xl: "80px" }}>
         <>
           <Flex direction="column" gap={{ base: "20px", md: "24px" }}>
+          <Link href="/dashboard/beranda">
+            <Flex
+              w="full"
+              alignItems="center"
+              gap="2"
+              fontSize="xl"
+              fontWeight="500"
+              transition= "all 0.3s ease"
+              cursor='pointer'
+              _hover={{
+                textDecoration: "underline",
+              }}
+              my='2'
+            >
+              <IoMdArrowRoundBack />
+              Kembali
+            </Flex>
+            </Link>
             <Flex alignItems="center" gap="6" w="full">
               <Box>
                 <Image

@@ -73,7 +73,7 @@ const Dropdown = ({ semesterNumber, sks, ips, listNilai }: Semester) => {
             w="max-content"
           >
             <Text
-              fontSize={{ base: "md", md: "xl" }}
+              fontSize={{ base: "md", md: "lg" }}
               fontWeight="500"
               color="green.500"
             >

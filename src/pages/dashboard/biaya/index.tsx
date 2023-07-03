@@ -6,6 +6,7 @@ import Card from "components/card/Card";
 import ProfileTab from "./components/Header";
 import Link from "next/link";
 import BiayaData from "./components/BiayaData";
+import { IoMdArrowRoundBack } from "react-icons/io";
 export default function Presensi(props: { [x: string]: any }) {
   // Chakra Color Mode
   const { ...rest } = props;
@@ -15,6 +16,24 @@ export default function Presensi(props: { [x: string]: any }) {
       <Box pt={{ base: "40px", md: "80px", xl: "80px" }}>
         <>
           <Flex direction="column" gap={{ base:'20px',md:"24px" }}>
+          <Link href="/dashboard/beranda">
+            <Flex
+              w="full"
+              alignItems="center"
+              gap="2"
+              fontSize="xl"
+              fontWeight="500"
+              transition= "all 0.3s ease"
+              cursor='pointer'
+              _hover={{
+                textDecoration: "underline",
+              }}
+              my='2'
+            >
+              <IoMdArrowRoundBack />
+              Kembali
+            </Flex>
+            </Link>
             <Flex alignItems="center" gap="6" w="full">
               <Box>
                 <Image
@@ -61,6 +80,12 @@ export default function Presensi(props: { [x: string]: any }) {
               {...rest}
             >
                <BiayaData /> 
+               <Flex justify="right" w="full" color='gray.500'>
+        
+        <Text>
+          Data terakhir diupdate pada sabtu, 03 Januari 2023 pukul 13.00
+        </Text>
+      </Flex>
             </Card>
 
             <Card

@@ -74,6 +74,7 @@ const PresensiComponent = () => {
         >
           Biaya Pendidikan
         </Text>
+
         <Box>
           <Select
             bg="white"
@@ -90,7 +91,10 @@ const PresensiComponent = () => {
           </Select>
         </Box>
       </Flex>
-
+      <Flex fontSize={{ base: "lg", md: "xl" }} mb='6' bgColor='biru.100' p='2' rounded='lg' fontWeight='500' w="full" color='biru.500'>
+        <Text>Semester Ganjil - Tahun 2022</Text>
+        
+      </Flex>
       {filteredBiayaData.map((biaya) => (
         <Box
           key={biaya.id}
@@ -116,21 +120,25 @@ const PresensiComponent = () => {
                 >
                   {biaya.tagihan}
                 </Text>
-                <Flex gap={{ base:'1',md:'4' }} alignItems={{ base:'left',md:'center' }} direction={{ base:'column', md:'row' }}>
+                <Flex
+                  gap={{ base: "1", md: "4" }}
+                  alignItems={{ base: "left", md: "center" }}
+                  direction={{ base: "column", md: "row" }}
+                >
                   <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="500">
                     {biaya.value}
                   </Text>
                   <Text
-                  // display={biaya.status == "Lunas" ? "none" : "block"}
+                    // display={biaya.status == "Lunas" ? "none" : "block"}
                     px="2"
-                    py='1'
-                    h='max-content'
+                    py="1"
+                    h="max-content"
                     bgColor={biaya.status == "Lunas" ? "green.100" : "red.100"}
                     fontSize={{ base: "md", md: "lg" }}
                     color={biaya.status == "Lunas" ? "green.500" : "red.500"}
                     fontWeight="500"
-                    rounded='lg'
-                    w='max-content'
+                    rounded="lg"
+                    w="max-content"
                   >
                     {biaya.status}
                   </Text>
